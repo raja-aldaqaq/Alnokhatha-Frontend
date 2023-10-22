@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import AddSlip from './components/Slips/AddSlip'
 import Slip from './components/Slips/Slip'
+import Harbors from './components/Harbors/harbors'
 const App = () => {
   const [slip, setslips] = useState([])
   const [harbor, setHarbors] = useState([])
@@ -42,6 +43,7 @@ const App = () => {
             element={<AddSlip getSlips={getSlips} harbor={harbor} />}
           />
           <Route path="/slip" element={<Slip slip={slip} />} />
+          <Route path="/harbors" element={<Harbors />} />
         </Routes>
       </main>
     </div>
