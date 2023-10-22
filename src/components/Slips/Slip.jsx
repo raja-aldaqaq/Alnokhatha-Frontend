@@ -7,6 +7,7 @@ const Slip = ({ slip }) => {
       {slip.map((slip) => (
         <div key={slip._id} className="harbor">
           <h3>{slip.number}</h3>
+
           <h3>{slip.Harbor.name}</h3>
           <button>Delete</button>
           <button>Edit</button>
