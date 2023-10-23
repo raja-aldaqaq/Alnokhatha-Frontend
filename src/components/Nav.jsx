@@ -40,6 +40,11 @@ const Nav = ({ user, handleLogOut }) => {
           {' '}
           All Slips
         </NavLink>
+
+        <NavLink to="Showprofile" className={'link-user '}>
+          {' '}
+       Showprofile
+        </NavLink>
       </nav>
       {/* {user ? userOptions : publicOptions} */}
     </header>

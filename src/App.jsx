@@ -2,16 +2,14 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import Register from '../pages/Register'
 import Home from '../pages/Home'
-import { Route, Routes } from 'react-router-dom'
 import SignIn from '../pages/SignIn'
 import Nav from './components/Nav'
 import axios from 'axios'
-import Nav from './components/Nav'
 import { Routes, Route } from 'react-router-dom'
-import { useState, useEffect } from 'react'
 import AddSlip from './components/Slips/AddSlip'
 import Slip from './components/Slips/Slip'
 import Harbors from './components/Harbors/harbors'
+import Showprofile from'../pages/Showprofile'
 
 const App = () => {
   const [slip, setslips] = useState([])
@@ -24,18 +22,22 @@ const App = () => {
     localStorage.clear()
   }
 
-  // const checkToken = async () => {
-  //   const user = await CheckSession()
-  //   setUser(user)
-  // }
+  const checkToken = async () => {
+    const user = await CheckSession()
+    setUser(user)
+  }
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token')
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    getSlips()
+    getHarbors()
 
-  //   if (token) {
-  //     checkToken()
-  //   }
-  // }, [])
+
+
+    if (token) {
+      checkToken()
+    }
+  }, [])
   const getSlips = async () => {
     try {
       let res = await axios.post('http://localhost:3001/boatSlip/slips')
@@ -52,12 +54,12 @@ const App = () => {
       console.log(error)
     }
   }
-  useEffect(() => {
-    getSlips()
-  }, [])
-  useEffect(() => {
-    getHarbors()
-  }, [])
+  // useEffect(() => {
+  //   getSlips()
+  // }, [])
+  // useEffect(() => {
+  //   getHarbors()
+  // }, [])
 
   return (
     <div>
@@ -73,9 +75,11 @@ const App = () => {
           <Route path="/slip" element={<Slip slip={slip} />} />
           <Route path="/harbors" element={<Harbors />} />
 
+          <Route path="/Showprofile" element={<Showprofile user={user } />} />
+
           <Route path="/" element={<Home />} />
           <Route path="/Register" element={<Register />} />
-          <Route path="/SignIn" element={<SignIn />} />
+          <Route path="/SignIn" element={<SignIn setUser={setUser} />} />
         </Routes>
       </main>
     </div>

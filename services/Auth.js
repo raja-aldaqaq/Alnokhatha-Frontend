@@ -27,3 +27,12 @@ export const CheckSession = async () => {
     throw error
   }
 }
+
+export const updateUser = async (userData, user_id) => {
+  try {
+    const response = await Client.put(`auth/Showprofile/${user_id}`, userData)
+    return response.data
+  } catch (error) {
+    throw new Error(error.response.data.error)
+  }
+}

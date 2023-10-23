@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { SignInUser } from '../services/Auth'
-
+import { useNavigate } from 'react-router'
 
 const SignIn = ({ setUser }) => {
+  const navigate = useNavigate()
   const [formValues, setFormValues] = useState({ CPR: '', password: '' })
 
   const handleChange = (e) => {
@@ -16,6 +17,7 @@ const SignIn = ({ setUser }) => {
     const playload = await SignInUser(formValues)
     setFormValues({ CPR: '', password: '' })
     setUser(playload)
+    navigate('/slip')
   }
 
   return (
