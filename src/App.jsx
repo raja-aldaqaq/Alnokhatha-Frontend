@@ -13,11 +13,20 @@ import EditHarbor from './components/Harbors/EditHarbor'
 import EditSlip from './components/Slips/EditSlip'
 const App = () => {
   const [slip, setslips] = useState([])
+  const [boat, setBoats] = useState([])
   const [harbor, setHarbors] = useState([])
   const getSlips = async () => {
     try {
       let res = await axios.post('http://localhost:3001/boatSlip/slips')
       setslips(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const getBoats = async () => {
+    try {
+      let res = await axios.post('http://localhost:3001/boat/viewBoats')
+      setBoats(res.data)
     } catch (error) {
       console.log(error)
     }
@@ -30,12 +39,13 @@ const App = () => {
       console.log(error)
     }
   }
+
   useEffect(() => {
     getSlips()
-  }, [])
-  useEffect(() => {
+    getBoats()
     getHarbors()
   }, [])
+
   return (
     <div>
       <header>
@@ -48,9 +58,10 @@ const App = () => {
             element={<AddSlip getSlips={getSlips} harbor={harbor} />}
           />
           <Route path="/slip" element={<Slip slip={slip} />} />
-          <Route path="/addBoat" element={<AddBoat />} />
+
+          <Route path="/addBoat" element={<AddBoat getBoats={getBoats} />} />
           <Route path="/viewBoats" element={<ViewBoats />} />
-          <Route path="/harbors" element={<Harbors />} />
+
           <Route path="/harbors" element={<Harbors harbor={harbor} />} />
           <Route
             path="/addHarbor"

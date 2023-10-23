@@ -20,6 +20,9 @@ const Nav = () => {
         <NavLink to="addBoat" className={'link-user'}>
           Add Boat
         </NavLink>
+        <NavLink to="viewBoats" className={'link-user'}>
+          All Boats
+        </NavLink>
         <NavLink to="harbors" className={'link-user '}>
           All Harbors
         </NavLink>
