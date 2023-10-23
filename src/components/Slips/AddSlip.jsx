@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react'
-// import '/Users/zahralaradi/Desktop/GA/Project3/Alnokhatha-Frontend/src/App.css'
+
 const AddSlip = ({ getSlips, harbor }) => {
   const initialState = {
     number: '',

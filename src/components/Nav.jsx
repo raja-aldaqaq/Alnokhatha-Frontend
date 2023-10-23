@@ -8,15 +8,16 @@ const Nav = () => {
     <header>
       <nav>
         <NavLink to="/" className={'link-styles'}>
-          {' '}
           ALNOKHATHA
         </NavLink>
         <NavLink to="addSlip" className={'link-user '}>
           Add Slip
         </NavLink>
         <NavLink to="slip" className={'link-user '}>
-          {' '}
           All Slips
+        </NavLink>
+        <NavLink to="addBoat" className={'link-user'}>
+          Add Boat
         </NavLink>
       </nav>
     </header>

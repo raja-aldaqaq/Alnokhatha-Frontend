@@ -6,6 +6,9 @@ import { useState, useEffect } from 'react'
 import AddSlip from './components/Slips/AddSlip'
 import Slip from './components/Slips/Slip'
 import Harbors from './components/Harbors/harbors'
+import AddBoat from './components/Boats/AddBoat'
+import ViewBoats from './components/Boats/viewBoats'
+
 const App = () => {
   const [slip, setslips] = useState([])
   const [harbor, setHarbors] = useState([])
@@ -33,7 +36,6 @@ const App = () => {
   }, [])
   return (
     <div>
-      
       <header>
         <Nav />
       </header>
@@ -45,6 +47,8 @@ const App = () => {
           />
           <Route path="/slip" element={<Slip slip={slip} />} />
           <Route path="/harbors" element={<Harbors />} />
+          <Route path="/addBoat" element={<AddBoat />} />
+          <Route path="/viewBoats" element={<ViewBoats />} />
         </Routes>
       </main>
     </div>
