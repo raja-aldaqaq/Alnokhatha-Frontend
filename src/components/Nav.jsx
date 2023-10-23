@@ -4,7 +4,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton'
 import { NavLink } from 'react-router-dom'
 import '../App.css'
 
-const Nav = () => {
+
 
 const Nav = ({ user, handleLogOut }) => {
   let userOptions
@@ -29,7 +29,7 @@ const Nav = ({ user, handleLogOut }) => {
 
   return (
     <header>
-            <nav>
+      <nav>
         <NavLink to="/" className={'link-styles'}>
           ALNOKHATHA
         </NavLink>
@@ -44,11 +44,12 @@ const Nav = ({ user, handleLogOut }) => {
         </NavLink>
         <NavLink to="viewBoats" className={'link-user'}>
           All Boats
+        </NavLink>
         <NavLink to="Showprofile" className={'link-user '}>
           Showprofile
         </NavLink>
         <NavLink to="/addUsers"  className={'link-user '}>
-         Add User
+          Add User
         </NavLink>
         <NavLink to="harbors" className={'link-user '}>
           All Harbors
@@ -56,7 +57,6 @@ const Nav = ({ user, handleLogOut }) => {
         <NavLink to="addHarbor" className={'link-user '}>
           Add Harbor
         </NavLink>
-
       </nav>
       {/* {user ? userOptions : publicOptions} */}
     </header>
