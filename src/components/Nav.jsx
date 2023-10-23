@@ -3,6 +3,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import { NavLink } from 'react-router-dom'
 import '../App.css'
+
 const Nav = () => {
   return (
     <header>
@@ -18,6 +19,12 @@ const Nav = () => {
         </NavLink>
         <NavLink to="addBoat" className={'link-user'}>
           Add Boat
+        </NavLink>
+        <NavLink to="harbors" className={'link-user '}>
+          All Harbors
+        </NavLink>
+        <NavLink to="addHarbor" className={'link-user '}>
+          Add Harbor
         </NavLink>
       </nav>
     </header>
