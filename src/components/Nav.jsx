@@ -18,6 +18,14 @@ const Nav = () => {
           {' '}
           All Slips
         </NavLink>
+        <NavLink to="harbors" className={'link-user '}>
+          {' '}
+          All Harbors
+        </NavLink>
+        <NavLink to="addHarbor" className={'link-user '}>
+          {' '}
+          Add Harbor
+        </NavLink>
       </nav>
     </header>
   )

@@ -1,7 +1,8 @@
 import axios from 'axios'
 import { useState } from 'react'
-import '/Users/zahralaradi/Desktop/GA/Project3/Alnokhatha-Frontend/src/App.css'
+import { Navigate, useNavigate } from 'react-router-dom'
 const AddSlip = ({ getSlips, harbor }) => {
+  let navigate = useNavigate()
   const initialState = {
     number: '',
     Available: 'true',
@@ -13,6 +14,7 @@ const AddSlip = ({ getSlips, harbor }) => {
     await axios.post('http://localhost:3001/boatSlip/create', slipState)
     setSlipState(initialState)
     getSlips()
+    navigate('/slip')
   }
   const handleChange = (event) => {
     setSlipState({ ...slipState, [event.target.id]: event.target.value })
