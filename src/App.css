@@ -1,7 +1,5 @@
 body {
-
   background-image: url("../public/s.jpg");
-
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -10,6 +8,13 @@ body {
   margin: 0;
   height: 100vh;
 }
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 header {
   height: 4em;
   display: flex;
@@ -17,11 +22,13 @@ header {
   align-items: center;
   background-color: #1B3351;
 }
+
 nav {
   margin-right: 1em;
   display: flex;
   color: white;
 }
+
 .link-styles {
   padding: 0 30px;
   color: aliceblue;
@@ -29,6 +36,7 @@ nav {
   font-size: 30px;
 
 }
+
 .link-user {
   font-size: 1.5em;
   color: aliceblue;
@@ -38,19 +46,21 @@ nav {
   padding:0 1em; 
 
 }
+
 .formSlip {
   position: relative;
   align-items: center;
   text-align: center;
-  left: 10em;
-  margin-top: 2em;
- width: 40em;
- height: 40em;
-/* UI Properties */
-background: #000000 0% 0% no-repeat padding-box;
-border-radius: 30px;
-opacity: 0.76;
+  /* left: 10em;
+  margin-top: 2em; */
+  width: 40em;
+  height: 40em;
+  /* UI Properties */
+  background: #000000 0% 0% no-repeat padding-box;
+  border-radius: 30px;
+  opacity: 0.76;
 }
+
 .formSlip label{text-align: left;
   font: normal normal normal 30px/35px Felix Titling;
   letter-spacing: 0px;
@@ -58,42 +68,69 @@ opacity: 0.76;
   opacity: 1;
 
 }
+
 .formSlip input {
   background: #FFFFFF 0% 0% no-repeat padding-box;
-border-radius: 20px;
-opacity: 1;
+  border-radius: 20px;
+  opacity: 1;
 }
+
 .formSlip button {
   background: #52DE5B 0% 0% no-repeat padding-box;
-border-radius: 30px;
-opacity: 1;
+  border-radius: 30px;
+  opacity: 1;
 }
+
 h3{
   color: white;
   font-weight: bold;
   font-size: 2em;
 }
+
 .harbor{
   position: relative;
   align-items: center;
   text-align: center;
-  left: 10em;
+  /* left: 10em; */
   margin-top: 2em;
- width: 40em;
- height: 10em;
-/* UI Properties */
-background: #000000 0% 0% no-repeat padding-box;
-border-radius: 30px;
-opacity: 0.76;
+  width: 40em;
+  height: 10em;
+  /* UI Properties */
+  background: #000000 0% 0% no-repeat padding-box;
+  border-radius: 30px;
+  opacity: 0.76;
 }
 .harbor button {
   text-align: left;
-position: relative;
-bottom:5em;
-left: 10em;
-letter-spacing: 0px;
-color: #4D4D4D;
-opacity: 1;
-padding: 5px;
-margin: 5px;
+  position: relative;
+  bottom:5em;
+  left: 10em;
+  letter-spacing: 0px;
+  color: #4D4D4D;
+  opacity: 1;
+  padding: 5px;
+  margin: 5px;
+}
+
+.boatformBG{
+  height: 70vh;
+  width: 50%;
+  background-color: #000000;
+  border-radius: 7%;
+  padding: 5%;
+  /* opacity: 55%; */
+}
+
+.boatform, .boatformBG {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* align-items: center; */
+  text-align: center;
+  opacity: 100%;
+}
+
+.allboats{
+  display: flex;
+  flex-direction: row;
 }

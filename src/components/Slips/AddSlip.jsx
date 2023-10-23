@@ -21,6 +21,8 @@ const AddSlip = ({ getSlips, harbor }) => {
     setSlipState({ ...slipState, [event.target.id]: event.target.value })
   }
   return (
+    <>
+    <h1>Add slip</h1>
     <form onSubmit={handleSubmit} className="formSlip">
       <label htmlFor="number">Slip Number:</label>
       <input
@@ -44,6 +46,7 @@ const AddSlip = ({ getSlips, harbor }) => {
       </select>
       <button type="submit">Add Slip</button>
     </form>
+    </>
   )
 }
 export default AddSlip
