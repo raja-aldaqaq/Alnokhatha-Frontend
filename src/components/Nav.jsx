@@ -1,4 +1,9 @@
 import { Link } from 'react-router-dom'
+import Dropdown from 'react-bootstrap/Dropdown'
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import { NavLink } from 'react-router-dom'
+import '../App.css'
+
 
 const Nav = ({ user, handleLogOut }) => {
   let userOptions
@@ -23,16 +28,20 @@ const Nav = ({ user, handleLogOut }) => {
 
   return (
     <header>
-      <Link to="/">
-        <div className="logo-wrapper" alt="logo">
-          <img
-            className="logo"
-            src="https://avatars.dicebear.com/api/gridy/app.svg"
-            alt="welcome banner"
-          />
-        </div>
-      </Link>
-      {user ? userOptions : publicOptions}
+            <nav>
+        <NavLink to="/" className={'link-styles'}>
+          {' '}
+          ALNOKHATHA
+        </NavLink>
+        <NavLink to="addSlip" className={'link-user '}>
+          Add Slip
+        </NavLink>
+        <NavLink to="slip" className={'link-user '}>
+          {' '}
+          All Slips
+        </NavLink>
+      </nav>
+      {/* {user ? userOptions : publicOptions} */}
     </header>
   )
 }

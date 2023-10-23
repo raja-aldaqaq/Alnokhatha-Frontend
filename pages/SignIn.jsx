@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { SignInUser } from '../services/Auth'
+
 
 const SignIn = ({ setUser }) => {
   const [formValues, setFormValues] = useState({ CPR: '', password: '' })
@@ -6,6 +8,8 @@ const SignIn = ({ setUser }) => {
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
+
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault()

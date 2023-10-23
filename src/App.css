@@ -1,3 +1,97 @@
 body {
+  background-image: url("../public/mesmerizing-shot-crystal-blue-ocean-waves.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: white;
   margin: 0;
+  height: 100vh;
+}
+header {
+  height: 4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1B3351;
+}
+nav {
+  margin-right: 1em;
+  display: flex;
+  color: white;
+}
+.link-styles {
+  padding: 0 30px;
+  color: aliceblue;
+  text-decoration: none; 
+  font-size: 30px;
+
+}
+.link-user {
+  font-size: 1.5em;
+  color: aliceblue;
+  text-decoration: none; 
+  position: relative;
+  left: 10em;
+  padding:0 1em; 
+
+}
+.formSlip {
+  position: relative;
+  align-items: center;
+  text-align: center;
+  left: 10em;
+  margin-top: 2em;
+ width: 40em;
+ height: 40em;
+/* UI Properties */
+background: #000000 0% 0% no-repeat padding-box;
+border-radius: 30px;
+opacity: 0.76;
+}
+.formSlip label{text-align: left;
+  font: normal normal normal 30px/35px Felix Titling;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+
+}
+.formSlip input {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+border-radius: 20px;
+opacity: 1;
+}
+.formSlip button {
+  background: #52DE5B 0% 0% no-repeat padding-box;
+border-radius: 30px;
+opacity: 1;
+}
+h3{
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+}
+.harbor{
+  position: relative;
+  align-items: center;
+  text-align: center;
+  left: 10em;
+  margin-top: 2em;
+ width: 40em;
+ height: 10em;
+/* UI Properties */
+background: #000000 0% 0% no-repeat padding-box;
+border-radius: 30px;
+opacity: 0.76;
+}
+.harbor button {
+  text-align: left;
+position: relative;
+bottom:5em;
+left: 10em;
+letter-spacing: 0px;
+color: #4D4D4D;
+opacity: 1;
+padding: 5px;
+margin: 5px;
 }
