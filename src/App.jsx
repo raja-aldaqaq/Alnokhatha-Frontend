@@ -38,13 +38,11 @@ const App = () => {
     const token = localStorage.getItem('token')
     getSlips()
     getHarbors()
-
-
-
     if (token) {
       checkToken()
     }
   }, [])
+
   const getSlips = async () => {
     try {
       let res = await axios.post('http://localhost:3001/boatSlip/slips')
@@ -53,6 +51,7 @@ const App = () => {
       console.log(error)
     }
   }
+
   const getBoats = async () => {
     try {
       let res = await axios.get('http://localhost:3001/boat/viewBoats')
@@ -62,6 +61,7 @@ const App = () => {
       console.log(error)
     }
   }
+
   const getHarbors = async () => {
     try {
       let res = await axios.get('http://localhost:3001/harbor/harbors')
