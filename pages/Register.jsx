@@ -1,14 +1,16 @@
 import { useState } from 'react'
+import { RegisterUser } from '../services/Auth'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-
 const Register = () => {
+  let navigat = useNavigate()
   const [formValues, setFormValues] = useState({
     name: '',
     CPR: '',
     email: '',
     phoneNumber: '',
-    picture: '',
+    pic: null , 
     password: '',
     confirmPassword: ''
   })
@@ -17,17 +19,24 @@ const Register = () => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
+  const handlePicChange = (e) => {
+    setFormValues({
+      ...formValues,
+      pic: e.target.files[0],
+    })
+    console.log(e.target.files[0])
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await axios.post('http://localhost:3001/issues', formState)
-    await RegisterUser({
-      name: formValues.name,
-      CPR: formValues.CPR,
-      email: formValues.email,
-      phoneNumber: formValues.phoneNumber,
-      picture : formValues.picture ,
-      password: formValues.password
-    })
+    const formData = new FormData()
+    formData.append('name', formValues.name)
+    formData.append('CPR', formValues.CPR)
+    formData.append('email', formValues.email)
+    formData.append('phoneNumber', formValues.phoneNumber)
+    formData.append('pic', formValues.pic)
+    formData.append('password', formValues.password)
+    await RegisterUser(formData)
     setFormValues({
       name: '',
       email: '',
@@ -40,8 +49,7 @@ const Register = () => {
   return (
     <div className="signin col">
       <div className="card-overlay centered">
-        <form className="col" onSubmit={handleSubmit}>
-
+        <form className="col" onSubmit={handleSubmit} encType="multipart/form-data">
           <div className="input-wrapper">
             <label htmlFor="name">Full Name</label>
             <input
@@ -81,20 +89,20 @@ const Register = () => {
             <label htmlFor="name">Phone Number</label>
             <input
               onChange={handleChange}
-              name="phonenumber"
-              type="number"
+              name="phoneNumber"
+              type="text"
               placeholder="ُEnter your Phone Number"
-              value={formValues.name}
+              value={formValues.phoneNumber}
               required
             />
           </div>
 
           <div>
-        <label htmlFor="file" className="sr-only">
-          Upload your personal photo
-        </label>
-        <input id="file" type="file" onChange={handleChange} />
-      </div>
+            <label htmlFor="file" className="sr-only">
+              Upload your personal photo
+            </label>
+            <input id="file" type="file" accept='image/*' onChange={handlePicChange} />
+          </div>
 
           <div className="input-wrapper">
             <label htmlFor="password">Password</label>
@@ -116,14 +124,14 @@ const Register = () => {
               required
             />
           </div>
-          <button
+          <button onSubmit={handleSubmit}
             disabled={
               !formValues.CPR ||
               (!formValues.password &&
                 formValues.confirmPassword === formValues.password)
             }
           >
-            Sign In
+            Register
           </button>
         </form>
       </div>

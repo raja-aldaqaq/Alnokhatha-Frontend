@@ -1,36 +1,49 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 import './App.css'
 import Register from '../pages/Register'
 import Home from '../pages/Home'
 import { Route, Routes } from 'react-router-dom'
 import SignIn from '../pages/SignIn'
+import Nav from './components/Nav'
 
 
 const App = () => {
-  const [issues, setIssues] = useState([])
+  const [user, setUser] = useState(null)
 
-  const getIssues = async () => {
-    try {
-      let res = await axios.get('http://localhost:3001/issues')
-      setIssues(res.data)
-    } catch (err) {
-      console.log(err)
-    }
+  const handleLogOut = () => {
+    
+    setUser(null)
+    localStorage.clear()
   }
 
-  useEffect(() => {
-    getIssues()
-  }, [])
+  // const checkToken = async () => {
+  //   const user = await CheckSession()
+  //   setUser(user)
+  // }
 
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token')
+
+  //   if (token) {
+  //     checkToken()
+  //   }
+  // }, [])
+  
+  
   return (
     <div>
-
+    <Nav
+        user={user}
+        handleLogOut={handleLogOut}
+      />
+      <main>
+    
       <Routes>
         <Route path='/' element={<Home />} /> 
         <Route path="/Register" element={<Register />} />
         <Route path="/SignIn" element={<SignIn />} />
-      </Routes>
+        </Routes>
+        </main>
     </div>
   )
 }
