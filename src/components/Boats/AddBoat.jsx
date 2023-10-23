@@ -11,7 +11,7 @@ const AddBoat = ({ getBoats }) => {
     size: '',
     license_type: '',
     license_expiry_date: '',
-    picture: '',
+    picture: ''
   }
   const [boatState, setBoatState] = useState(initialState)
 
@@ -28,55 +28,83 @@ const AddBoat = ({ getBoats }) => {
 
   return (
     <>
-    <h1>Add Boat</h1>
-    <div className='boatformBG'>
-    <form onSubmit={handleSubmit} className="boat form">
-      <div>
-        <label htmlFor="name">Boat Name:</label>
-        <input
-          type="text"
-          id="name"
-          onChange={handleChange}
-          value={boatState.name}
-        />
-      </div>
+      <h1>Add Boat</h1>
+      <div className="boatformBG">
+        <form onSubmit={handleSubmit} className="boat form">
+          <div>
+            <label htmlFor="name">Boat Name:</label>
+            <input
+              type="text"
+              id="name"
+              onChange={handleChange}
+              value={boatState.name}
+              required
+            />
+          </div>
 
-      <div>
-        <label htmlFor="number">Boat Number:</label>
-        <input
-          type="text"
-          id="number"
-          onChange={handleChange}
-          value={boatState.number}
-        />
-      </div>
+          <div>
+            <label htmlFor="number">Boat Number:</label>
+            <input
+              type="text"
+              id="number"
+              onChange={handleChange}
+              value={boatState.number}
+              required
+            />
+          </div>
 
-      <div>
-        <label htmlFor="size">Boat Size:</label>
-        <input
-          type="text"
-          id="size"
-          onChange={handleChange}
-          value={boatState.size}
-        />
-      </div>
+          <div>
+            <label htmlFor="size">Boat Size:</label>
+            <input
+              type="text"
+              id="size"
+              onChange={handleChange}
+              value={boatState.size}
+              required
+            />
+          </div>
 
-      <div>
-        <select
-          id="license_type"
-          onChange={handleChange}
-          value={boatState.license_type}
-        >
-          <option value="fisher">fisher</option>
-          <option value="pleasure">pleasure</option>
-          <option value="service">service</option>
-          <option value="passenger">passenger</option>
-        </select>
-      </div>
+          <div>
+            <label htmlFor="license_type">License Type :</label>
+            <select
+              id="license_type"
+              onChange={handleChange}
+              value={boatState.license_type}
+              defaultValue={'pleasure'}
+              required
+            >
+              <option value="pleasure">pleasure</option>
+              <option value="fisher">fisher</option>
+              <option value="service">service</option>
+              <option value="passenger">passenger</option>
+            </select>
+          </div>
 
-      <button type="submit">Add Boat</button>
-    </form>
-    </div>
+          {boatState.license_type === 'fisher' ? (
+            <div>
+              <label htmlFor="license_expiry_date">license Expiry Date</label>
+              <input
+                type="date"
+                id="license_expiry_date"
+                onChange={handleChange}
+                value={boatState.license_expiry_date}
+              />
+            </div>
+          ) : null}
+
+          <div>
+            <label htmlFor="picture">Picture</label>
+            <input
+              type="text"
+              id="picture"
+              onChange={handleChange}
+              value={boatState.picture}
+            />
+          </div>
+
+          <button type="submit">Add Boat</button>
+        </form>
+      </div>
     </>
   )
 }

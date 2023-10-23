@@ -25,7 +25,8 @@ const App = () => {
   }
   const getBoats = async () => {
     try {
-      let res = await axios.post('http://localhost:3001/boat/viewBoats')
+      let res = await axios.get('http://localhost:3001/boat/viewBoats')
+      // console.log(res.data)
       setBoats(res.data)
     } catch (error) {
       console.log(error)
@@ -60,7 +61,7 @@ const App = () => {
           <Route path="/slip" element={<Slip slip={slip} />} />
 
           <Route path="/addBoat" element={<AddBoat getBoats={getBoats} />} />
-          <Route path="/viewBoats" element={<ViewBoats />} />
+          <Route path="/viewBoats" element={<ViewBoats boat={boat} />} />
 
           <Route path="/harbors" element={<Harbors harbor={harbor} />} />
           <Route

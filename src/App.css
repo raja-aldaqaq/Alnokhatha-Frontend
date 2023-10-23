@@ -7,7 +7,6 @@ body {
   color: white;
   margin: 0;
   height: 100vh;
-
 }
 
 main{
@@ -52,8 +51,8 @@ nav {
   position: relative;
   align-items: center;
   text-align: center;
-  left: 10em;
-  margin-top: 2em;
+  /* left: 10em;
+  margin-top: 2em; */
   width: 40em;
   height: 40em;
   /* UI Properties */
@@ -81,16 +80,18 @@ nav {
   border-radius: 30px;
   opacity: 1;
 }
+
 h3{
   color: white;
   font-weight: bold;
   font-size: 2em;
 }
+
 .harbor{
   position: relative;
   align-items: center;
   text-align: center;
-  left: 10em;
+  /* left: 10em; */
   margin-top: 2em;
   width: 40em;
   height: 10em;
@@ -115,11 +116,21 @@ h3{
   height: 70vh;
   width: 50%;
   background-color: #000000;
-  opacity: 55%;
+  border-radius: 7%;
+  padding: 5%;
+  /* opacity: 55%; */
 }
 
-.boatform {
+.boatform, .boatformBG {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  /* align-items: center; */
+  text-align: center;
   opacity: 100%;
+}
+
+.allboats{
+  display: flex;
+  flex-direction: row;
 }
