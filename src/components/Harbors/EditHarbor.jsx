@@ -33,7 +33,7 @@ const EditHarbor = () => {
       .catch((err) => console.log(err))
   }
   return (
-    <form action="">
+    <form>
       <label htmlFor="name">Harbor Name </label>
       <input
         type="text"

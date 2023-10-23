@@ -8,6 +8,7 @@ import Slip from './components/Slips/Slip'
 import Harbors from './components/Harbors/harbors'
 import AddHarbor from './components/Harbors/AddHarbor'
 import EditHarbor from './components/Harbors/EditHarbor'
+import EditSlip from './components/Slips/EditSlip'
 const App = () => {
   const [slip, setslips] = useState([])
   const [harbor, setHarbors] = useState([])
@@ -51,6 +52,9 @@ const App = () => {
             element={<AddHarbor getHarbors={getHarbors} />}
           />
           <Route path="/harbor/update/:harbor_id" element={<EditHarbor />} />
+          <Route path="/harbor/delete/:harbor_id" element={<Harbors />} />
+          <Route path="/slip/update/:boatSlip_id" element={<EditSlip />} />
+          <Route path="/slip/delete/:boatSlip_id" element={<Slip />} />
         </Routes>
       </main>
     </div>
