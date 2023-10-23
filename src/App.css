@@ -1,11 +1,12 @@
 body {
+
   background-image: url("../public/s.jpg");
+
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
   color: white;
-
   margin: 0;
   height: 100vh;
 }
@@ -14,14 +15,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
- background-color: #1B3351;
- 
+  background-color: #1B3351;
 }
 nav {
   margin-right: 1em;
   display: flex;
   color: white;
- 
 }
 .link-styles {
   padding: 0 30px;

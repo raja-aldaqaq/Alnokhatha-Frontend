@@ -36,6 +36,7 @@ const App = () => {
   }, [])
   return (
     <div>
+      
       <header>
         <Nav />
       </header>

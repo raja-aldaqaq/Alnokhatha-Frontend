@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+
 const Slip = ({ slip }) => {
   const { slip_id } = useParams()
   function deleteOne(slip_id) {
