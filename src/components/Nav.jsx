@@ -45,6 +45,9 @@ const Nav = ({ user, handleLogOut }) => {
           {' '}
        Showprofile
         </NavLink>
+        <NavLink to="/addUsers"  className={'link-user '}>
+        Add User
+        </NavLink>
       </nav>
       {/* {user ? userOptions : publicOptions} */}
     </header>

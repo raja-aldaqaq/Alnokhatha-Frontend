@@ -8,7 +8,7 @@ const AddUsers = () => {
   const [formValues, setFormValues] = useState({
     name: '',
     CPR: '',
-    type: 'client',
+    type: '',
     email: '',
     phoneNumber: '',
     pic: null,
@@ -136,6 +136,14 @@ const AddUsers = () => {
             />
           </div>
 
+          <select name="type" onChange={handleChange} value={formValues.type}>
+              <option selected disabled>
+                Choose Your User Type
+              </option>
+              <option id="admin" value='admin'>Admin</option>
+              <option id="staff" value='staff'>Staff</option>
+          </select>
+          
           <input type="hidden" name="type" value={formValues.type} />
 
           <button

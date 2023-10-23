@@ -8,9 +8,10 @@ const Register = () => {
   const [formValues, setFormValues] = useState({
     name: '',
     CPR: '',
+    type: 'client',
     email: '',
     phoneNumber: '',
-    pic: null , 
+    pic: null,
     password: '',
     confirmPassword: ''
   })
@@ -22,7 +23,7 @@ const Register = () => {
   const handlePicChange = (e) => {
     setFormValues({
       ...formValues,
-      pic: e.target.files[0],
+      pic: e.target.files[0]
     })
     console.log(e.target.files[0])
   }
@@ -32,6 +33,7 @@ const Register = () => {
     const formData = new FormData()
     formData.append('name', formValues.name)
     formData.append('CPR', formValues.CPR)
+    formData.append('type', formValues.type)
     formData.append('email', formValues.email)
     formData.append('phoneNumber', formValues.phoneNumber)
     formData.append('pic', formValues.pic)
@@ -49,7 +51,11 @@ const Register = () => {
   return (
     <div className="signin col">
       <div className="card-overlay centered">
-        <form className="col" onSubmit={handleSubmit} encType="multipart/form-data">
+        <form
+          className="col"
+          onSubmit={handleSubmit}
+          encType="multipart/form-data"
+        >
           <div className="input-wrapper">
             <label htmlFor="name">Full Name</label>
             <input
@@ -101,7 +107,12 @@ const Register = () => {
             <label htmlFor="file" className="sr-only">
               Upload your personal photo
             </label>
-            <input id="file" type="file" accept='image/*' onChange={handlePicChange} />
+            <input
+              id="file"
+              type="file"
+              accept="image/*"
+              onChange={handlePicChange}
+            />
           </div>
 
           <div className="input-wrapper">
@@ -124,7 +135,11 @@ const Register = () => {
               required
             />
           </div>
-          <button onSubmit={handleSubmit}
+
+          <input type="hidden" name="type" value={formValues.type} />
+
+          <button
+            onSubmit={handleSubmit}
             disabled={
               !formValues.CPR ||
               (!formValues.password &&

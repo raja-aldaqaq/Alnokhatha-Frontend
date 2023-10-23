@@ -9,7 +9,8 @@ import { Routes, Route } from 'react-router-dom'
 import AddSlip from './components/Slips/AddSlip'
 import Slip from './components/Slips/Slip'
 import Harbors from './components/Harbors/harbors'
-import Showprofile from'../pages/Showprofile'
+import Showprofile from '../pages/Showprofile'
+import AddUsers from '../pages/AddUsers'
 
 const App = () => {
   const [slip, setslips] = useState([])
@@ -79,6 +80,7 @@ const App = () => {
 
           <Route path="/" element={<Home />} />
           <Route path="/Register" element={<Register />} />
+          <Route path="/addUsers" element={<AddUsers />} />
           <Route path="/SignIn" element={<SignIn setUser={setUser} />} />
         </Routes>
       </main>
