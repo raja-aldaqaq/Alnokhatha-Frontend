@@ -30,24 +30,27 @@ const Nav = ({ user, handleLogOut }) => {
     <header>
             <nav>
         <NavLink to="/" className={'link-styles'}>
-          {' '}
           ALNOKHATHA
         </NavLink>
         <NavLink to="addSlip" className={'link-user '}>
           Add Slip
         </NavLink>
         <NavLink to="slip" className={'link-user '}>
-          {' '}
           All Slips
         </NavLink>
-
         <NavLink to="Showprofile" className={'link-user '}>
-          {' '}
-       Showprofile
+          Showprofile
         </NavLink>
         <NavLink to="/addUsers"  className={'link-user '}>
-        Add User
+         Add User
         </NavLink>
+        <NavLink to="harbors" className={'link-user '}>
+          All Harbors
+        </NavLink>
+        <NavLink to="addHarbor" className={'link-user '}>
+          Add Harbor
+        </NavLink>
+
       </nav>
       {/* {user ? userOptions : publicOptions} */}
     </header>
