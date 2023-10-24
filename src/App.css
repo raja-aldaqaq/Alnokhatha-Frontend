@@ -145,6 +145,13 @@ h3{
   flex-direction: row;
 }
 
-/* h3 {
-  font-size: 15px;
-} */
+.h {
+  margin-top: 50px;
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.profile {
+  display: flex-end;
+}
