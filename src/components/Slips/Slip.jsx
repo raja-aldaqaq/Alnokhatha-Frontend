@@ -12,6 +12,7 @@ const Slip = ({ slip }) => {
       })
       .catch((err) => console.log(err))
   }
+
   return (
     <div>
       {slip.map((slip) => (

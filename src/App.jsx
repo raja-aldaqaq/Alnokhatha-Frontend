@@ -16,6 +16,7 @@ import AddUsers from '../pages/AddUsers'
 import AddHarbor from './components/Harbors/AddHarbor'
 import EditHarbor from './components/Harbors/EditHarbor'
 import EditSlip from './components/Slips/EditSlip'
+import EditBoat from './components/Boats/EditBoat'
 
 const App = () => {
   const [slip, setslips] = useState([])
@@ -38,11 +39,12 @@ const App = () => {
     const token = localStorage.getItem('token')
     getSlips()
     getHarbors()
-
+ 
     if (token) {
       checkToken()
     }
   }, [])
+
   const getSlips = async () => {
     try {
       let res = await axios.post('http://localhost:3001/boatSlip/slips')
@@ -51,6 +53,7 @@ const App = () => {
       console.log(error)
     }
   }
+
   const getBoats = async () => {
     try {
       let res = await axios.get('http://localhost:3001/boat/viewBoats')
@@ -60,6 +63,7 @@ const App = () => {
       console.log(error)
     }
   }
+
   const getHarbors = async () => {
     try {
       let res = await axios.get('http://localhost:3001/harbor/harbors')
@@ -74,7 +78,7 @@ const App = () => {
   }, [])
   useEffect(() => {
     getHarbors()
-  }, [])
+  }, [boat])
 
   return (
     <div>
@@ -91,7 +95,9 @@ const App = () => {
 
           <Route path="/addBoat" element={<AddBoat getBoats={getBoats} />} />
           <Route path="/viewBoats" element={<ViewBoats boat={boat} />} />
-          <Route path="/Showprofile" element={<Showprofile user={user} />} />
+
+          <Route path="/boat/update/:boat_id" element={<EditBoat />} />
+          <Route path="/Showprofile" element={<Showprofile user={user } />} />
           <Route path="/" element={<Home />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/addUsers" element={<AddUsers />} />
