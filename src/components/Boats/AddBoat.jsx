@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const AddBoat = ({ getBoats }) => {
+  
   let navigate = useNavigate()
 
   const initialState = {
@@ -22,6 +23,7 @@ const AddBoat = ({ getBoats }) => {
     getBoats()
     navigate('/viewBoats')
   }
+
   const handleChange = (event) => {
     setBoatState({ ...boatState, [event.target.id]: event.target.value })
   }
