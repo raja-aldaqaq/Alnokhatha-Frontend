@@ -16,6 +16,7 @@ import AddUsers from '../pages/AddUsers'
 import AddHarbor from './components/Harbors/AddHarbor'
 import EditHarbor from './components/Harbors/EditHarbor'
 import EditSlip from './components/Slips/EditSlip'
+import EditBoat from './components/Boats/EditBoat'
 
 const App = () => {
   const [slip, setslips] = useState([])
@@ -75,7 +76,7 @@ const App = () => {
     getSlips()
     getBoats()
     getHarbors()
-  }, [])
+  }, [boat])
 
 
   return (
@@ -93,6 +94,7 @@ const App = () => {
 
           <Route path="/addBoat" element={<AddBoat getBoats={getBoats} />} />
           <Route path="/viewBoats" element={<ViewBoats boat={boat} />} />
+          <Route path="/boat/update/:boat_id" element={<EditBoat />} />
           <Route path="/Showprofile" element={<Showprofile user={user } />} />
           <Route path="/" element={<Home />} />
           <Route path="/Register" element={<Register />} />
