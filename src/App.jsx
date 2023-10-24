@@ -17,10 +17,11 @@ import AddHarbor from './components/Harbors/AddHarbor'
 import EditHarbor from './components/Harbors/EditHarbor'
 import EditSlip from './components/Slips/EditSlip'
 import EditBoat from './components/Boats/EditBoat'
+import { CheckSession } from '../services/Auth'
 
 const App = () => {
   const [slip, setslips] = useState([])
-  const [boat, setBoats] = useState([])
+  const [boats, setBoats] = useState([])
   const [harbor, setHarbors] = useState([])
 
   const [user, setUser] = useState(null)
@@ -35,9 +36,12 @@ const App = () => {
     setUser(user)
   }
 
+
+
   useEffect(() => {
     const token = localStorage.getItem('token')
     getSlips()
+    getBoats()
     getHarbors()
     if (token) {
       checkToken()
@@ -72,11 +76,7 @@ const App = () => {
     }
   }
 
-  useEffect(() => {
-    getSlips()
-    getBoats()
-    getHarbors()
-  }, [boat])
+
 
 
   return (
@@ -92,8 +92,8 @@ const App = () => {
           />
           <Route path="/slip" element={<Slip slip={slip} />} />
 
-          <Route path="/addBoat" element={<AddBoat getBoats={getBoats} />} />
-          <Route path="/viewBoats" element={<ViewBoats boat={boat} />} />
+          <Route path="/addBoat" element={<AddBoat getBoats={getBoats} user={user} />} />
+          <Route path="/viewBoats" element={<ViewBoats boats={boats} />} />
           <Route path="/boat/update/:boat_id" element={<EditBoat />} />
           <Route path="/Showprofile" element={<Showprofile user={user } />} />
           <Route path="/" element={<Home />} />

@@ -2,8 +2,8 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const AddBoat = ({ getBoats }) => {
-  
+const AddBoat = ({ getBoats, user }) => {
+
   let navigate = useNavigate()
 
   const initialState = {
@@ -12,8 +12,11 @@ const AddBoat = ({ getBoats }) => {
     size: '',
     license_type: '',
     license_expiry_date: '',
-    picture: ''
+    picture: '',
+    user:user._id,
   }
+
+  console.log(user._id)
   const [boatState, setBoatState] = useState(initialState)
 
   const handleSubmit = async (event) => {
@@ -104,6 +107,7 @@ const AddBoat = ({ getBoats }) => {
             />
           </div>
 
+            <input type="hidden" name="user" id="user" value={boatState.user} />
           <button type="submit">Add Boat</button>
         </form>
       </div>
