@@ -30,13 +30,11 @@ const App = () => {
   }
   useEffect(() => {
     getSlips()
-  }, [])
-  useEffect(() => {
     getHarbors()
   }, [])
+
   return (
     <div>
-      
       <header>
         <Nav />
       </header>
