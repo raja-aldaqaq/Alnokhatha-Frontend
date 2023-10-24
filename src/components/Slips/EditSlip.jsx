@@ -27,13 +27,13 @@ const EditSlip = () => {
     axios
       .put('http://localhost:3001/boatSlip/update/' + boatSlip_id, values)
       .then((res) => {
-        navigate('/')
+        navigate('/slip')
       })
       .catch((err) => console.log(err))
   }
 
   return (
-    <form>
+    <form className="harbor">
       <label htmlFor="number">Slip Number</label>
       <input
         type="text"

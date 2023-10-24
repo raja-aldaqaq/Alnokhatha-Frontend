@@ -1,12 +1,42 @@
-import { Link } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const ViewBoats = ({ boat }) => {
+const ViewBoats = ({ boats }) => {
+
+  let navigate = useNavigate()
+
+  const { boat_id } = useParams()
+
+  function deleteOne(boat_id) {
+    axios
+      .delete('http://localhost:3001/boat/delete/' + boat_id)
+      .then(() => {
+        navigate('/viewBoats')
+        console.log('Deleted')
+      })
+      .catch((err) => console.log(err))
+  }
+
   return (
     <div className="allboats">
-      {boat.map((boat) => (
+      {boats.map((boat, index) => (
         <div key={boat._id} className="boat">
           <h3>Name : {boat.name}</h3>
+          <Link to={`/boat/update/${boat._id}`}>
+            <button>Edit</button>
+          </Link>
+          <Link to={`/boat/delete/${boat._id}`}>
+            <button
+              onClick={(e) => {
+                e.preventDefault()
+                deleteOne(boat._id)
+                navigate('/viewBoats')
+                boats.splice(index,1)
+              }}
+            >
+              Delete
+            </button>
+          </Link>
         </div>
       ))}
     </div>
