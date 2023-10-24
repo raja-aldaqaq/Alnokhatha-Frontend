@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { RegisterUser } from '../services/Auth'
+import { RegisterUser } from '../../../services/Auth'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
@@ -62,7 +62,7 @@ const Register = () => {
               onChange={handleChange}
               name="name"
               type="text"
-              placeholder="ُEnter your Full Name"
+              placeholder="Enter your Full Name"
               value={formValues.name}
               required
             />
@@ -74,7 +74,7 @@ const Register = () => {
               onChange={handleChange}
               name="CPR"
               type="text"
-              placeholder="ُEnter your CPR Number"
+              placeholder="Enter your CPR Number"
               value={formValues.CPR}
               required
             />
@@ -97,7 +97,7 @@ const Register = () => {
               onChange={handleChange}
               name="phoneNumber"
               type="text"
-              placeholder="ُEnter your Phone Number"
+              placeholder="Enter your Phone Number"
               value={formValues.phoneNumber}
               required
             />

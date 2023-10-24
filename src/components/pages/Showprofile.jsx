@@ -1,17 +1,19 @@
 import { useState } from 'react'
-import Client from '../services/api'
+import Client from '../../../services/api'
 
 const UpdateProfile = ({ user }) => {
   // const [formValues, setformValues] = useState({})
   const [formValues, setFormValues] = useState({
     name: user.name,
-    CPR: user.CPR , 
-    email: user.email , 
-    phoneNumber: user.phoneNumber ,
+    CPR: user.CPR,
+    email: user.email,
+    phoneNumber: user.phoneNumber
     // pic: null,
   })
 
-
+  console.log(user.pic)
+  user.pic = user.pic.replace('public', '')
+  console.log(user.pic)
 
   const handleChange = (e) => {
     const attribute = e.target.name
@@ -26,7 +28,10 @@ const UpdateProfile = ({ user }) => {
 
   const handleUpdate = async (e) => {
     e.preventDefault()
-    const response = await Client.put(`/auth/EditProfile/${user._id}`, formValues)
+    const response = await Client.put(
+      `/auth/EditProfile/${user._id}`,
+      formValues
+    )
     console.log(response)
   }
 
@@ -58,6 +63,11 @@ const UpdateProfile = ({ user }) => {
           encType="multipart/form-data"
         >
           <h1> Update</h1>
+
+          <img src={`http://localhost:3001/${user.pic}`}></img>
+          {/* <img src="/public/upload" value={formValues.pic} */}
+          {/* style=" width: 200px; height: auto ;" for="files"></img> */}
+
           <div className="input-wrapper">
             <label htmlFor="name">Full Name</label>
             <input
@@ -139,7 +149,7 @@ const UpdateProfile = ({ user }) => {
             />
           </div> */}
           <button
-            type='submit'
+            type="submit"
             // disabled={
             //   !formValues.CPR ||
             //   (!formValues.password &&

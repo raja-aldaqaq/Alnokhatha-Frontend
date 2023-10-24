@@ -3,13 +3,12 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import { NavLink } from 'react-router-dom'
 import '../App.css'
-
 const Nav = ({ user, handleLogOut }) => {
   let userOptions
   if (user) {
     userOptions = (
       <nav>
-        <h3>Welcome {user.email}!</h3>
+        <h3>Welcome {user.name}!</h3>
         <Link onClick={handleLogOut} to="/">
           Sign Out
         </Link>
@@ -27,6 +26,7 @@ const Nav = ({ user, handleLogOut }) => {
   return (
     <header>
       <nav>
+      <nav>
         <NavLink to="/" className={'link-styles'}>
           ALNOKHATHA
         </NavLink>
@@ -43,6 +43,10 @@ const Nav = ({ user, handleLogOut }) => {
           All Boats
         </NavLink>
         <NavLink to="Showprofile" className={'link-user '}>
+          Edit Profile
+        </NavLink>
+        <NavLink to="Show" className={'link-user '}>
+          {' '}
           Showprofile
         </NavLink>
         <NavLink to="/addUsers" className={'link-user '}>
@@ -55,7 +59,7 @@ const Nav = ({ user, handleLogOut }) => {
           Add Harbor
         </NavLink>
       </nav>
-      {/* {user ? userOptions : publicOptions} */}
+      {user ? userOptions : publicOptions}
     </header>
   )
 }
