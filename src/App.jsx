@@ -43,6 +43,7 @@ const App = () => {
     getSlips()
     getBoats()
     getHarbors()
+    // myBoats()
     if (token) {
       checkToken()
     }
@@ -66,6 +67,18 @@ const App = () => {
       console.log(error)
     }
   }
+
+
+  // const getMyBoats = async () => {
+  //   try {
+  //     let res = await axios.get('http://localhost:3001/boat/myBoats')
+  //     // console.log(res.data)
+  //     setBoats(res.data)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
+
 
   const getHarbors = async () => {
     try {
@@ -94,6 +107,7 @@ const App = () => {
 
           <Route path="/addBoat" element={<AddBoat getBoats={getBoats} user={user} />} />
           <Route path="/viewBoats" element={<ViewBoats boats={boats} />} />
+          <Route path="/myBoats" element={<ViewBoats boats={boats} />} />
           <Route path="/boat/update/:boat_id" element={<EditBoat />} />
           <Route path="/Showprofile" element={<Showprofile user={user } />} />
           <Route path="/" element={<Home />} />
