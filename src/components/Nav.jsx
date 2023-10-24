@@ -13,19 +13,40 @@ const Nav = ({ user, handleLogOut }) => {
     console.log(user.pic)
 
     userOptions = (
-      <div>
+
+      <div className='h'>
+
+        <Link to="/addSlip" className={'link-user '}>Add Slip</Link>
+        <Link to="slip" className={'link-user '}>
+          All Slips
+        </Link>
+        <Link to="addBoat" className={'link-user'}>
+          Add Boat
+        </Link>
+        <Link to="viewBoats" className={'link-user'}>
+          All Boats
+        </Link>
+        <Link to="/addUsers" className={'link-user '}>
+          Add User
+        </Link>
+        <Link to="harbors" className={'link-user '}>
+          All Harbors
+        </Link>
+        <Link to="addHarbor" className={'link-user '}>
+          Add Harbor
+        </Link>
+        <div className='profile'>
         <img
           src={`http://localhost:3001/${user.pic}`}
           className="profilepic"
         ></img>
-
-        <h3 className="welcome">Welcome {user.name}!</h3>
-
+        <h5>Welcome {user.name}!</h5>
         <Link to="/Show" className={'link-user'}>
           Show Profile
         </Link>
-        <div onClick={handleLogOut}>Sign Out</div>
-      </div>
+          <div onClick={handleLogOut}>Sign Out</div>
+        </div>
+        </div>
     )
   }
 
@@ -40,14 +61,14 @@ const Nav = ({ user, handleLogOut }) => {
   return (
     <header>
       <nav>
-        <div>
+        <div className='h'>
         <NavLink to="/" className={'link-styles'}>
           ALNOKHATHA
         </NavLink>
-        <NavLink to="addSlip" className={'link-user '}>
+        {/* <NavLink to="addSlip" className={'link-user '}>
           Add Slip
-        </NavLink>
-        <NavLink to="slip" className={'link-user '}>
+        </NavLink> */}
+        {/* <NavLink to="slip" className={'link-user '}>
           All Slips
         </NavLink>
         <NavLink to="addBoat" className={'link-user'}>
@@ -56,10 +77,6 @@ const Nav = ({ user, handleLogOut }) => {
         <NavLink to="viewBoats" className={'link-user'}>
           All Boats
         </NavLink>
-        {/* <NavLink to="Showprofile" className={'link-user '}>
-          Edit Profile
-        </NavLink> */}
-        {/* <NavLink to="Show" className={'link-user '}> Showprofile</NavLink> */}
         <NavLink to="/addUsers" className={'link-user '}>
           Add User
         </NavLink>
@@ -68,7 +85,7 @@ const Nav = ({ user, handleLogOut }) => {
         </NavLink>
         <NavLink to="addHarbor" className={'link-user '}>
           Add Harbor
-        </NavLink>
+        </NavLink> */}
         </div>
         {user ? userOptions : publicOptions}
       </nav>
