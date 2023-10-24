@@ -43,8 +43,8 @@ const Nav = ({ user, handleLogOut }) => {
         <h5>Welcome {user.name}!</h5>
         <Link to="/Show" className={'link-user'}>
           Show Profile
-        </Link>
-          <div onClick={handleLogOut}>Sign Out</div>
+          </Link>
+          <div className='log' onClick={handleLogOut}>Sign Out</div>
         </div>
         </div>
     )
