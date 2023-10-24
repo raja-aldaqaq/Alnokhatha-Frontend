@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import { RegisterUser } from '../services/Auth'
+import { RegisterUser } from '../../../services/Auth'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const Register = () => {
+const AddUsers = () => {
   let navigat = useNavigate()
   const [formValues, setFormValues] = useState({
     name: '',
     CPR: '',
-    type: 'client',
+    type: '',
     email: '',
     phoneNumber: '',
     pic: null,
@@ -136,6 +136,18 @@ const Register = () => {
             />
           </div>
 
+          <select name="type" onChange={handleChange} value={formValues.type}>
+            <option selected disabled>
+              Choose Your User Type
+            </option>
+            <option id="admin" value="admin">
+              Admin
+            </option>
+            <option id="staff" value="staff">
+              Staff
+            </option>
+          </select>
+
           <input type="hidden" name="type" value={formValues.type} />
 
           <button
@@ -154,4 +166,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default AddUsers
