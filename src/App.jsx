@@ -18,6 +18,7 @@ import EditHarbor from './components/Harbors/EditHarbor'
 import EditSlip from './components/Slips/EditSlip'
 import EditBoat from './components/Boats/EditBoat'
 import { CheckSession } from '../services/Auth'
+import MyBoats from './components/Boats/MyBoats'
 
 const App = () => {
   const [slip, setslips] = useState([])
@@ -36,14 +37,11 @@ const App = () => {
     setUser(user)
   }
 
-
-
   useEffect(() => {
     const token = localStorage.getItem('token')
     getSlips()
     getBoats()
     getHarbors()
- 
     if (token) {
       checkToken()
     }
@@ -68,6 +66,8 @@ const App = () => {
     }
   }
 
+
+
   const getHarbors = async () => {
     try {
       let res = await axios.get('http://localhost:3001/harbor/harbors')
@@ -76,8 +76,6 @@ const App = () => {
       console.log(error)
     }
   }
-
-
 
   return (
     <div>
@@ -92,10 +90,14 @@ const App = () => {
           />
           <Route path="/slip" element={<Slip slip={slip} />} />
 
-          <Route path="/addBoat" element={<AddBoat getBoats={getBoats} user={user} />} />
+          <Route
+            path="/addBoat"
+            element={<AddBoat getBoats={getBoats} user={user} />}
+          />
           <Route path="/viewBoats" element={<ViewBoats boats={boats} />} />
+          <Route path="/myBoats/" element={<MyBoats user={user} />} />
           <Route path="/boat/update/:boat_id" element={<EditBoat />} />
-          <Route path="/Showprofile" element={<Showprofile user={user } />} />
+          <Route path="/Showprofile" element={<Showprofile user={user} />} />
           <Route path="/" element={<Home />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/addUsers" element={<AddUsers />} />
