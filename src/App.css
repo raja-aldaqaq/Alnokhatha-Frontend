@@ -136,7 +136,7 @@ h3{
 }
 
 .profilepic {
-  width: 20px; height: auto; border-radius: 50%;
+  width: 50px; height: auto; border-radius: 50%;
 }
 
 .welcome {
@@ -154,4 +154,102 @@ h3{
 
 .profile {
   display: flex-end;
+}
+.profile {
+  position: fixed;
+  top: -10px;
+ right: 1px;
+  font-size: 3em;
+
+}
+.log {
+  position: fixed;
+  top: 1px;
+  right: 0px;
+
+}
+
+
+
+.card-container {
+	background-color: #231E39;
+	border-radius: 5px;
+	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+	color: #B3B8CD;
+	padding-top: 30px;
+	position: relative;
+	width: 350px;
+	max-width: 100%;
+	text-align: center;
+  margin: 30px;
+
+}
+
+
+
+.card-container .round {
+	border: 1px solid #03BFCB;
+	border-radius: 50%;
+	padding: 7px;
+  width: 50%;
+}
+
+
+button.primary {
+	background-color: #03BFCB;
+	border: 1px solid #03BFCB;
+	border-radius: 3px;
+	color: #231E39;
+	font-family: Montserrat, sans-serif;
+	/* font-weight: 500; */
+	padding: 10px 25px;
+  width: 100px;
+  height: 50px;
+  margin: 5px;
+font-size: 10px;
+
+}
+
+button.primary.ghost {
+	background-color: transparent;
+	color: #02899C;
+  width: 50px;
+  width: 100px;
+  height: 50px;
+  margin: 5px;
+
+}
+
+buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.full {
+background-color: #231E39;
+margin: 5px;
+color: white;
+font-family: Montserrat, sans-serif;
+text-align: center;
+}
+
+input {
+  margin: 8px;
+}
+
+.all {
+align-items:center;
+}
+
+.input-wrapper {
+  align-items: center;
+}
+
+.cen {
+  align-items: center;
+}
+
+label {
+  margin: 2px ;
 }

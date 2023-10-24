@@ -51,44 +51,38 @@ const Show = ({ user }) => {
   }
 
   return user ? (
-    <div className="signin col">
-      <div className="card-overlay centered">
-        <form
-        // className="col"
-        // onSubmit={handleUpdate}
-        // encType="multipart/form-data"
-        >
+    <div className="card-container">
+      <div>
+        <form className='all'>
           <h1> Show Profile</h1>
-          <img src={`http://localhost:3001/${user.pic}`} />
+          <img className="round "src={`http://localhost:3001/${user.pic}`} />
 
-          <div className="input-wrapper">
+          <div className='cen'>
             <label htmlFor="name">Full Name</label>
-            <input
+            <input className="full"
               onChange={handleChange}
               name="name"
-              type="text"
-              // placeholder="ُEnter your Full Name"
-              // placeholder={formValues.name}
+              // type="text"
               value={formValues.name}
               required
             />
-          </div>
+        
 
           <div className="input-wrapper">
             <label htmlFor="name">CPR Number</label>
-            <input
+            <input className="full"
               onChange={handleChange}
               name="CPR"
               type="text"
               // placeholder="ُEnter your CPR Number"
               value={formValues.CPR}
               required
-            />
+            />  
           </div>
 
           <div className="input-wrapper">
             <label htmlFor="email">Email</label>
-            <input
+            <input className="full"
               onChange={handleChange}
               name="email"
               type="email"
@@ -99,7 +93,7 @@ const Show = ({ user }) => {
           </div>
           <div className="input-wrapper">
             <label htmlFor="name">Phone Number</label>
-            <input
+            <input className="full"
               onChange={handleChange}
               name="phoneNumber"
               type="text"
@@ -107,12 +101,13 @@ const Show = ({ user }) => {
               value={formValues.phoneNumber}
               required
             />
-          </div>
-
+          </div></div>
+          <div className='buttons'>
           <Link to="/showprofile">
-            <button>edit my profile</button>
+            <button  className='primary' >edit profile</button>
           </Link>
-          <button type="submit">change my password</button>
+            <button  className='primary ghost' type="submit">change password</button>
+          </div>
         </form>
       </div>
     </div>
