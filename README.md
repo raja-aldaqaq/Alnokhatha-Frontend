@@ -15,7 +15,7 @@ This system serves a real problem in the country, which is to help the employees
 [5]- User Can Register, Login And Update Profile
 [6]- User Can Add Boats
 [7]- User Can Request For A Slip In A Specific Harbor
-[8]- Staff Can Approve Or Reject the Request By User .
+[8]- Staff Can Approve Or Reject the Request By User...
 
 # Trello
 
