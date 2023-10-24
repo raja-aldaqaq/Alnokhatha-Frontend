@@ -9,7 +9,7 @@ const Home = () => {
 <h1> welcome to ALNOKHATHA !!!</h1>
 
       <section className="welcome-signin">
-       
+      
         <button onClick={() => navigate('/Register')}>
           Register
         </button>

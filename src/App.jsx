@@ -17,6 +17,7 @@ import AddUsers from './components/pages/AddUsers'
 import AddHarbor from './components/Harbors/AddHarbor'
 import EditHarbor from './components/Harbors/EditHarbor'
 import EditSlip from './components/Slips/EditSlip'
+import EditBoat from './components/Boats/EditBoat'
 import Show from './components/pages/Show'
 import { CheckSession } from '../services/Auth'
 
@@ -24,7 +25,7 @@ const App = () => {
   let navigate = useNavigate()
 
   const [slip, setslips] = useState([])
-  const [boat, setBoats] = useState([])
+  const [boats, setBoats] = useState([])
   const [harbor, setHarbors] = useState([])
 
   const [user, setUser] = useState(null)
@@ -43,12 +44,13 @@ const App = () => {
   useEffect(() => {
     const token = localStorage.getItem('token')
     getSlips()
+    getBoats()
     getHarbors()
-
     if (token) {
       checkToken()
     }
   }, [])
+
   const getSlips = async () => {
     try {
       let res = await axios.post('http://localhost:3001/boatSlip/slips')
@@ -57,6 +59,7 @@ const App = () => {
       console.log(error)
     }
   }
+
   const getBoats = async () => {
     try {
       let res = await axios.get('http://localhost:3001/boat/viewBoats')
@@ -66,6 +69,7 @@ const App = () => {
       console.log(error)
     }
   }
+
   const getHarbors = async () => {
     try {
       let res = await axios.get('http://localhost:3001/harbor/harbors')
@@ -74,12 +78,6 @@ const App = () => {
       console.log(error)
     }
   }
-
-  useEffect(() => {
-    getSlips()
-    getBoats()
-    getHarbors()
-  }, [])
 
   return (
     <div>
@@ -94,8 +92,15 @@ const App = () => {
             element={<AddSlip getSlips={getSlips} harbor={harbor} />}
           />
           <Route path="/slip" element={<Slip slip={slip} />} />
-          <Route path="/addBoat" element={<AddBoat getBoats={getBoats} />} />
-          <Route path="/viewBoats" element={<ViewBoats boat={boat} />} />
+
+          <Route
+            path="/addBoat"
+            element={<AddBoat getBoats={getBoats} user={user} />}
+          />
+          <Route path="/viewBoats" element={<ViewBoats boats={boats} />} />
+          <Route path="/boat/update/:boat_id" element={<EditBoat />} />
+          <Route path="/Showprofile" element={<Showprofile user={user} />} />
+          <Route path="/" element={<Home />} />
           <Route path="/Showprofile" element={<Showprofile user={user} />} />
           <Route path="/Show" element={<Show user={user} />} />
           <Route path="/Register" element={<Register />} />
