@@ -4,8 +4,6 @@ import DropdownButton from 'react-bootstrap/DropdownButton'
 import { NavLink } from 'react-router-dom'
 import '../App.css'
 
-
-
 const Nav = ({ user, handleLogOut }) => {
   let userOptions
   if (user) {
@@ -18,7 +16,6 @@ const Nav = ({ user, handleLogOut }) => {
       </nav>
     )
   }
-
   const publicOptions = (
     <nav>
       <Link to="/">Home</Link>
@@ -48,7 +45,7 @@ const Nav = ({ user, handleLogOut }) => {
         <NavLink to="Showprofile" className={'link-user '}>
           Showprofile
         </NavLink>
-        <NavLink to="/addUsers"  className={'link-user '}>
+        <NavLink to="/addUsers" className={'link-user '}>
           Add User
         </NavLink>
         <NavLink to="harbors" className={'link-user '}>
