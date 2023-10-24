@@ -22,10 +22,8 @@ const Nav = ({ user, handleLogOut }) => {
       <Link to="/signin">Sign In</Link>
     </nav>
   )
-
   return (
     <header>
-      <nav>
       <nav>
         <NavLink to="/" className={'link-styles'}>
           ALNOKHATHA
