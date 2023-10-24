@@ -1,8 +1,7 @@
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
 
-const ViewBoats = ({ boat }) => {
+const ViewBoats = ({ boats }) => {
 
   let navigate = useNavigate()
 
@@ -20,7 +19,7 @@ const ViewBoats = ({ boat }) => {
 
   return (
     <div className="allboats">
-      {boat.map((boat) => (
+      {boats.map((boat, index) => (
         <div key={boat._id} className="boat">
           <h3>Name : {boat.name}</h3>
           <Link to={`/boat/update/${boat._id}`}>
@@ -32,6 +31,7 @@ const ViewBoats = ({ boat }) => {
                 e.preventDefault()
                 deleteOne(boat._id)
                 navigate('/viewBoats')
+                boats.splice(index,1)
               }}
             >
               Delete
