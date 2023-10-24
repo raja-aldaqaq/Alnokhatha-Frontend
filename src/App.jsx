@@ -43,6 +43,7 @@ const App = () => {
     getSlips()
     getBoats()
     getHarbors()
+ 
     if (token) {
       checkToken()
     }
@@ -75,7 +76,6 @@ const App = () => {
       console.log(error)
     }
   }
-
 
 
 
