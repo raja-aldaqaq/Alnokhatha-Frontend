@@ -1,19 +1,16 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Client from '../../../services/api'
+import { Link } from 'react-router-dom'
 
 const Show = ({ user }) => {
   // const [formValues, setformValues] = useState({})
   const [formValues, setFormValues] = useState({
-    name: user.name,
-    CPR: user.CPR,
-    email: user.email,
-    phoneNumber: user.phoneNumber
-    // pic: null,
+    name: '',
+    CPR: '',
+    email: '',
+    phoneNumber: '',
+    pic: ''
   })
-
-  console.log(user.pic)
-  user.pic = user.pic.replace('public', '')
-  console.log(user.pic)
 
   const handleChange = (e) => {
     const attribute = e.target.name
@@ -25,6 +22,19 @@ const Show = ({ user }) => {
     console.log(currentNewForm)
     setFormValues(currentNewForm)
   }
+
+  useEffect(() => {
+    if (user) {
+      user.pic = user.pic.replace('public', '')
+      setFormValues({
+        name: user.name,
+        CPR: user.CPR,
+        email: user.email,
+        phoneNumber: user.phoneNumber,
+        pic: user.pic
+      })
+    }
+  }, [user])
 
   // const handleUpdate = async (e) => {
   //   e.preventDefault()
@@ -40,7 +50,7 @@ const Show = ({ user }) => {
     console.log(e.target.files[0])
   }
 
-  return (
+  return user ? (
     <div className="signin col">
       <div className="card-overlay centered">
         <form
@@ -49,7 +59,7 @@ const Show = ({ user }) => {
         // encType="multipart/form-data"
         >
           <h1> Show Profile</h1>
-          <img src={`http://localhost:3001/${user.pic}`}></img>
+          <img src={`http://localhost:3001/${user.pic}`} />
 
           <div className="input-wrapper">
             <label htmlFor="name">Full Name</label>
@@ -99,11 +109,14 @@ const Show = ({ user }) => {
             />
           </div>
 
-          <button type="submit">edit my profile</button>
+          <Link to="/showprofile">
+            <button>edit my profile</button>
+          </Link>
           <button type="submit">change my password</button>
         </form>
       </div>
     </div>
-  )
+  ) : 
+    (<h1>loding</h1>)
 }
 export default Show

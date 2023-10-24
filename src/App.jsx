@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './App.css'
 import Register from './components/pages/Register'
 import Home from './components/pages/Home'
@@ -18,7 +19,10 @@ import EditHarbor from './components/Harbors/EditHarbor'
 import EditSlip from './components/Slips/EditSlip'
 import Show from './components/pages/Show'
 import { CheckSession } from '../services/Auth'
+
 const App = () => {
+  let navigate = useNavigate()
+
   const [slip, setslips] = useState([])
   const [boat, setBoats] = useState([])
   const [harbor, setHarbors] = useState([])
@@ -28,6 +32,7 @@ const App = () => {
   const handleLogOut = () => {
     setUser(null)
     localStorage.clear()
+    navigate('/')
   }
 
   const checkToken = async () => {

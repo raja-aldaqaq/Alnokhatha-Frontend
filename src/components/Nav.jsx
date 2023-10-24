@@ -6,28 +6,41 @@ import '../App.css'
 
 const Nav = ({ user, handleLogOut }) => {
   let userOptions
+
   if (user) {
+    console.log(user.pic)
+    user.pic = user.pic.replace('public', '')
+    console.log(user.pic)
+
     userOptions = (
-      <nav>
-        <h3>Welcome {user.name}!</h3>
-        <Link onClick={handleLogOut} to="/">
-          Sign Out
+      <div>
+        <img
+          src={`http://localhost:3001/${user.pic}`}
+          className="profilepic"
+        ></img>
+
+        <h3 className="welcome">Welcome {user.name}!</h3>
+
+        <Link to="/Show" className={'link-user'}>
+          Show Profile
         </Link>
-      </nav>
+        <div onClick={handleLogOut}>Sign Out</div>
+      </div>
     )
   }
 
   const publicOptions = (
-    <nav>
+    <div>
       <Link to="/">Home</Link>
       <Link to="/register">Register</Link>
       <Link to="/signin">Sign In</Link>
-    </nav>
+    </div>
   )
 
   return (
     <header>
       <nav>
+        <div>
         <NavLink to="/" className={'link-styles'}>
           ALNOKHATHA
         </NavLink>
@@ -43,10 +56,10 @@ const Nav = ({ user, handleLogOut }) => {
         <NavLink to="viewBoats" className={'link-user'}>
           All Boats
         </NavLink>
-        <NavLink to="Showprofile" className={'link-user '}>
+        {/* <NavLink to="Showprofile" className={'link-user '}>
           Edit Profile
-        </NavLink>
-        <NavLink to="Show" className={'link-user '}> Showprofile</NavLink>
+        </NavLink> */}
+        {/* <NavLink to="Show" className={'link-user '}> Showprofile</NavLink> */}
         <NavLink to="/addUsers" className={'link-user '}>
           Add User
         </NavLink>
@@ -56,8 +69,10 @@ const Nav = ({ user, handleLogOut }) => {
         <NavLink to="addHarbor" className={'link-user '}>
           Add Harbor
         </NavLink>
+        </div>
+        {user ? userOptions : publicOptions}
       </nav>
-      {user ? userOptions : publicOptions}
+      
     </header>
   )
 }
