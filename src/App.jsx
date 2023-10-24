@@ -39,6 +39,7 @@ const App = () => {
     const token = localStorage.getItem('token')
     getSlips()
     getHarbors()
+ 
     if (token) {
       checkToken()
     }
@@ -74,10 +75,10 @@ const App = () => {
 
   useEffect(() => {
     getSlips()
-    getBoats()
+  }, [])
+  useEffect(() => {
     getHarbors()
   }, [boat])
-
 
   return (
     <div>
@@ -94,6 +95,7 @@ const App = () => {
 
           <Route path="/addBoat" element={<AddBoat getBoats={getBoats} />} />
           <Route path="/viewBoats" element={<ViewBoats boat={boat} />} />
+
           <Route path="/boat/update/:boat_id" element={<EditBoat />} />
           <Route path="/Showprofile" element={<Showprofile user={user } />} />
           <Route path="/" element={<Home />} />
