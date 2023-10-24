@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 
 const Slip = ({ slip }) => {
   const { slip_id } = useParams()
-  function deleteOne(slip_id) {
+  const deleteOne = (slip_id) => {
     axios
       .delete('http://localhost:3001/boatSlip/delete/' + slip_id)
       .then(() => {
