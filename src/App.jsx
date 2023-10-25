@@ -99,7 +99,7 @@ const App = () => {
           />
           <Route path="/viewBoats" element={<ViewBoats boats={boats} />} />
           <Route path="/boat/update/:boat_id" element={<EditBoat />} />
-          <Route path="/Showprofile" element={<Showprofile user={user} />} />
+          {/* <Route path="/Showprofile" element={<Showprofile user={user} />} /> */}
           <Route path="/" element={<Home />} />
           <Route path="/Showprofile" element={<Showprofile user={user} />} />
           <Route path="/Show" element={<Show user={user} />} />
