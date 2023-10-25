@@ -1,7 +1,5 @@
 import Client from './api'
 
-
-
 export const RegisterUser = async (data) => {
   try {
     const res = await Client.post('/auth/register', data)
@@ -34,5 +32,19 @@ export const updateUser = async (userData, user_id) => {
     return response.data
   } catch (error) {
     throw new Error(error.response.data.error)
+  }
+}
+
+export const UpdatePassword = async (currentPassword, newPassword, user_id) => {
+  try {
+    console.log('hereeeeee')
+    const res = await Client.put(`auth/changepassword/${user_id}`, {
+      oldPassword: currentPassword,
+      newPassword
+    })
+    // localStorage.setItem('token', res.data.token)
+    return res.data.user
+  } catch (error) {
+    throw error
   }
 }

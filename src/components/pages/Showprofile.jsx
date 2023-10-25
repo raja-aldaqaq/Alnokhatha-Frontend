@@ -7,8 +7,8 @@ const UpdateProfile = ({ user }) => {
     name: user.name,
     CPR: user.CPR,
     email: user.email,
-    phoneNumber: user.phoneNumber
-    // pic: null,
+    phoneNumber: user.phoneNumber,
+    pic: null
   })
 
   console.log(user.pic)
@@ -28,9 +28,22 @@ const UpdateProfile = ({ user }) => {
 
   const handleUpdate = async (e) => {
     e.preventDefault()
-    const response = await Client.put(
+    const formData = new FormData()
+    formData.append('name', formValues.name)
+    formData.append('CPR', formValues.CPR)
+    formData.append('email', formValues.email)
+    formData.append('phoneNumber', formValues.phoneNumber)
+    formData.append('pic', formValues.pic)
+    // setFormValues({
+    //   name: '',
+    //   email: '',
+    //   password: '',
+    //   confirmPassword: ''
+    // })
+
+    const response = await Client.post(
       `/auth/EditProfile/${user._id}`,
-      formValues
+      formData
     )
     console.log(response)
   }
@@ -53,7 +66,22 @@ const UpdateProfile = ({ user }) => {
         >
           <h1> Update</h1>
 
-          <img className="round " src={`http://localhost:3001/${user.pic}`}></img>
+          <img
+            className="round "
+            src={`http://localhost:3001/${user.pic}`}
+          ></img>
+          <div>
+            <label htmlFor="file" className="sr-only">
+              change your profile picture
+            </label>
+            <input
+              name="pic"
+              id="file"
+              type="file"
+              accept="image/*"
+              onChange={handlePicChange}
+            />
+          </div>
 
           <div className="input-wrapper">
             <label htmlFor="name">Full Name</label>
@@ -103,7 +131,10 @@ const UpdateProfile = ({ user }) => {
             />
           </div>
 
-          <button className='primary'  type="submit"> update </button>
+          <button className="primary" type="submit">
+            {' '}
+            update{' '}
+          </button>
         </form>
       </div>
     </div>

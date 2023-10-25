@@ -21,6 +21,7 @@ import EditBoat from './components/Boats/EditBoat'
 import Show from './components/pages/Show'
 import { CheckSession } from '../services/Auth'
 import MyBoats from './components/Boats/MyBoats'
+import ChangePassword from './components/pages/Changepassword'
 
 const App = () => {
   let navigate = useNavigate()
@@ -105,7 +106,7 @@ const App = () => {
           <Route path="/boat/update/:boat_id" element={<EditBoat />} />
           <Route path="/Showprofile" element={<Showprofile user={user} />} />
           <Route path="/" element={<Home />} />
-          <Route path="/Showprofile" element={<Showprofile user={user} />} />
+          <Route path="/Changepassword" element={<ChangePassword user={user} />} />
           <Route path="/Show" element={<Show user={user} />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/addUsers" element={<AddUsers />} />
