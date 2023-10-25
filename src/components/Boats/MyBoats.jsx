@@ -48,7 +48,7 @@ const MyBoats = ({ user }) => {
               onClick={(e) => {
                 e.preventDefault()
                 deleteOne(boat._id)
-                navigate('/viewBoats')
+                navigate('/myBoats')
                 boats.splice(index, 1)
               }}
             >

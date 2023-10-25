@@ -15,9 +15,17 @@ const Nav = ({ user, handleLogOut }) => {
     userOptions = (
       <div className="h">
         {user.type === 'client' ? (
-          <Link to="addBoat" className={'link-user'}>
-            Add Boat
-          </Link>
+          <>
+            <Link to="addBoat" className={'link-user'}>
+              Add Boat
+            </Link>
+            <Link to="myBoats" className={'link-user'}>
+              My Boats
+            </Link>
+            <Link to="createRequest" className={'link-user'}>
+              Create Request
+            </Link>
+          </>
         ) : null}
 
         {user.type === 'admin' ? (
@@ -43,27 +51,22 @@ const Nav = ({ user, handleLogOut }) => {
           </div>
         ) : null}
 
-
-        {user.type === 'staff'
-          ?(
+        {user.type === 'staff' ? (
           <div>
-          <Link to="viewBoats" className={'link-user'}>
-            All Boats
-          </Link>
-          <Link to="harbors" className={'link-user '}>
-            All Harbors
-          </Link>
-          <Link to="/addSlip" className={'link-user '}>
-            Add Slip
-          </Link>
-          <Link to="slip" className={'link-user '}>
-            All Slips
-          </Link>
-        </div>): null}
-          
-          
-          
-
+            <Link to="viewBoats" className={'link-user'}>
+              All Boats
+            </Link>
+            <Link to="harbors" className={'link-user '}>
+              All Harbors
+            </Link>
+            <Link to="/addSlip" className={'link-user '}>
+              Add Slip
+            </Link>
+            <Link to="slip" className={'link-user '}>
+              All Slips
+            </Link>
+          </div>
+        ) : null}
 
         <div className="profile">
           <img
@@ -93,14 +96,12 @@ const Nav = ({ user, handleLogOut }) => {
   return (
     <header>
       <nav>
-
-
-        <div className='h'>
-        <NavLink to="/" className={'link-styles'}>
-          ALNOKHATHA
-        </NavLink>
+        <div className="h">
+          <NavLink to="/" className={'link-styles'}>
+            ALNOKHATHA
+          </NavLink>
         </div>
-        
+
         {user ? userOptions : publicOptions}
       </nav>
     </header>
