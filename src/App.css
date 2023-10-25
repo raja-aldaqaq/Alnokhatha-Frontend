@@ -1,5 +1,6 @@
 body {
-  background-image: url("/s.jpg");
+  /* background-image: url("/s.jpg"); */
+  background-image: url('/public/door-opening-revealing-boat-sea.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -7,6 +8,9 @@ body {
   color: white;
   margin: 0;
   height: 100vh;
+  opacity: 1;
+  
+
 }
 
 main{
@@ -172,16 +176,20 @@ h3{
 
 
 .card-container {
-	background-color: #231E39;
-	border-radius: 5px;
+  align-items:center;
+  background: #000000 0% 0% no-repeat padding-box;
+  border-radius: 30px;
+  opacity: 0.76;	border-radius: 5px;
 	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
 	color: #B3B8CD;
 	padding-top: 30px;
 	position: relative;
-	width: 350px;
+	width: 500px;
 	max-width: 100%;
 	text-align: center;
   margin: 30px;
+  margin-right: 900px;
+
 
 }
 
@@ -196,27 +204,33 @@ h3{
 
 
 button.primary {
-	background-color: #03BFCB;
-	border: 1px solid #03BFCB;
-	border-radius: 3px;
-	color: #231E39;
-	font-family: Montserrat, sans-serif;
-	/* font-weight: 500; */
-	padding: 10px 25px;
-  width: 100px;
-  height: 50px;
-  margin: 5px;
-font-size: 10px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+border-radius: 30px;
+opacity: 1;
+width: 200px;
+height: 30px;
+
+text-align: center;
+font: normal normal normal 25px/20px Dancing Script;
+letter-spacing: 0px;
+color: #1B3351;
+opacity: 1;
 
 }
 
 button.primary.ghost {
-	background-color: transparent;
-	color: #02899C;
-  width: 50px;
-  width: 100px;
-  height: 50px;
-  margin: 5px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+border-radius: 30px;
+opacity: 1;
+width: 200px;
+height: 30px;
+
+text-align: center;
+font: normal normal normal 25px/20px Dancing Script;
+letter-spacing: 0px;
+color: #1B3351;
+opacity: 1;
+
 
 }
 
@@ -224,10 +238,11 @@ buttons {
   display: flex;
   flex-direction: row;
   align-items: center;
+  
 }
 
 .full {
-background-color: #231E39;
+background-color: #1B3351;
 margin: 5px;
 color: white;
 font-family: Montserrat, sans-serif;
@@ -240,10 +255,14 @@ input {
 
 .all {
 align-items:center;
+background: #000000 0% 0% no-repeat padding-box;
+border-radius: 30px;
+opacity: 0.76;
 }
 
 .input-wrapper {
   align-items: center;
+  text-align: center
 }
 
 .cen {
@@ -253,3 +272,86 @@ align-items:center;
 label {
   margin: 2px ;
 }
+
+.wel{
+  text-align: left;
+  font: normal normal normal 100px/117px Dancing Script;
+  letter-spacing: 0px;
+  color: #1B3351;
+  font-size: 90px;
+}
+
+.w {
+  font: normal normal normal 100px/117px Dancing Script;
+  padding-top: 50px;
+  font-size: 70px;
+
+
+}
+
+.welcomeN{
+  margin-right: 650px;
+  
+}
+
+.zanoob{
+  margin: 15px;
+}
+
+.welcome-signin{
+  background: #1B3351 0% 0% no-repeat padding-box;
+border-radius: 30px;
+opacity: 0.63;
+color: white;
+width: 100px;
+height: 50px;
+margin-right: 20px;
+font: normal normal normal ;
+
+}
+
+.h{
+  text-align: center;
+}
+
+.col{
+  background: #1B3351 0% 0% no-repeat padding-box;
+border-radius: 30px;
+opacity: 0.76;
+margin-right: 900px;
+margin-top: 50px;
+width: 500px;
+padding: 20px;
+
+}
+
+.Registerbtn{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+border-radius: 30px;
+opacity: 1;
+/* top: 762px;
+left: 730px; */
+width: 200px;
+height: 50px;
+
+text-align: center;
+font: normal normal normal 25px/20px Dancing Script;
+letter-spacing: 0px;
+color: #1B3351;
+opacity: 1;
+}
+
+.input-wrapper{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+border-radius: 20px;
+opacity: 1;
+width: 200px;
+}
+
+.cen{
+  margin-right: 50px;
+  margin-top: 15px;
+}
+
+
+

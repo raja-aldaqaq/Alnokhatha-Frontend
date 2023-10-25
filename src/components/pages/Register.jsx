@@ -50,16 +50,18 @@ const Register = () => {
   }
 
   return (
-    <div className="signin col">
-      <div className="card-overlay centered">
+    <div >
+      <div >
         <form
           className="col"
           onSubmit={handleSubmit}
           encType="multipart/form-data"
         >
-          <div className="input-wrapper">
-            <label htmlFor="name">Full Name</label>
+          <h1 > Register page</h1>
+          <div >
+            <label htmlFor="name" >Full Name</label>
             <input
+              className="input-wrapper"
               onChange={handleChange}
               name="name"
               type="text"
@@ -69,9 +71,10 @@ const Register = () => {
             />
           </div>
 
-          <div className="input-wrapper">
+          <div>
             <label htmlFor="name">CPR Number</label>
             <input
+               className="input-wrapper"
               onChange={handleChange}
               name="CPR"
               type="text"
@@ -81,9 +84,10 @@ const Register = () => {
             />
           </div>
 
-          <div className="input-wrapper">
+          <div>
             <label htmlFor="email">Email</label>
             <input
+               className="input-wrapper"
               onChange={handleChange}
               name="email"
               type="email"
@@ -92,9 +96,10 @@ const Register = () => {
               required
             />
           </div>
-          <div className="input-wrapper">
+          <div>
             <label htmlFor="name">Phone Number</label>
             <input
+               className="input-wrapper"
               onChange={handleChange}
               name="phoneNumber"
               type="text"
@@ -105,10 +110,11 @@ const Register = () => {
           </div>
 
           <div>
-            <label htmlFor="file" className="sr-only">
+            <label htmlFor="file" >
               Upload your personal photo
             </label>
             <input
+               className="input-wrapper"
               id="file"
               type="file"
               accept="image/*"
@@ -116,9 +122,10 @@ const Register = () => {
             />
           </div>
 
-          <div className="input-wrapper">
+          <div >
             <label htmlFor="password">Password</label>
             <input
+              className="input-wrapper"
               onChange={handleChange}
               type="password"
               name="password"
@@ -126,9 +133,10 @@ const Register = () => {
               required
             />
           </div>
-          <div className="input-wrapper">
+          <div >
             <label htmlFor="confirmPassword">Confirm Password</label>
             <input
+              className="input-wrapper"
               onChange={handleChange}
               type="password"
               name="confirmPassword"
@@ -146,7 +154,7 @@ const Register = () => {
               (!formValues.password &&
                 formValues.confirmPassword === formValues.password)
             }
-          >
+          className='Registerbtn'>
             Register
           </button>
         </form>

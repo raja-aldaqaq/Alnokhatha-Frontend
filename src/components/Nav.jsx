@@ -87,20 +87,20 @@ const Nav = ({ user, handleLogOut }) => {
 
   const publicOptions = (
     <div>
-      <Link to="/">Home</Link>
-      <Link to="/register">Register</Link>
-      <Link to="/signin">Sign In</Link>
+      <Link to="/" className={'link-user'}>Home</Link>
+      <Link to="/register" className={'link-user'}>Register</Link>
+      <Link to="/signin" className={'link-user'}>Sign In</Link>
     </div>
   )
 
   return (
     <header>
       <nav>
-        <div className="h">
+        {/* <div className="h"> */}
           <NavLink to="/" className={'link-styles'}>
             ALNOKHATHA
           </NavLink>
-        </div>
+        {/* </div> */}
 
         {user ? userOptions : publicOptions}
       </nav>

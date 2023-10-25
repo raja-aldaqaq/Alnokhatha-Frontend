@@ -5,16 +5,20 @@ const Home = () => {
   const navigate = useNavigate()
 
   return (
-    <div className="home-container col">
-<h1> welcome to ALNOKHATHA !!!</h1>
 
-      <section className="welcome-signin">
+    
+    <div className='welcomeN'>
+      <h3 className='w'> welcome to</h3>
       
-        <button onClick={() => navigate('/Register')}>
+      <h1  className='wel' >ALNOKHATHA !!!</h1>
+
+      <section >
+      
+        <button onClick={() => navigate('/Register')} className="welcome-signin">
           Register
         </button>
 
-        <button onClick={() => navigate('/SignIn')}>
+        <button onClick={() => navigate('/SignIn')} className="welcome-signin">
           Sign In 
         </button>
 
