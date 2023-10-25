@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import Client from '../../../services/api'
+import { useNavigate } from 'react-router'
 
-const UpdateProfile = ({ user }) => {
+const UpdateProfile = ({ user, setUser }) => {
+  let navigate = useNavigate()
   // const [formValues, setformValues] = useState({})
   const [formValues, setFormValues] = useState({
     name: user.name,
@@ -33,7 +35,10 @@ const UpdateProfile = ({ user }) => {
     formData.append('CPR', formValues.CPR)
     formData.append('email', formValues.email)
     formData.append('phoneNumber', formValues.phoneNumber)
-    formData.append('pic', formValues.pic)
+    if (formValues.pic) {
+      formData.append('pic', formValues.pic)
+    }
+
     // setFormValues({
     //   name: '',
     //   email: '',
@@ -45,7 +50,8 @@ const UpdateProfile = ({ user }) => {
       `/auth/EditProfile/${user._id}`,
       formData
     )
-    console.log(response)
+    setUser(response.data)
+    navigate('/Show')
   }
 
   const handlePicChange = (e) => {

@@ -104,7 +104,7 @@ const App = () => {
           <Route path="/viewBoats" element={<ViewBoats boats={boats} />} />
           <Route path="/myBoats/" element={<MyBoats user={user} />} />
           <Route path="/boat/update/:boat_id" element={<EditBoat />} />
-          <Route path="/Showprofile" element={<Showprofile user={user} />} />
+          <Route path="/Showprofile" element={<Showprofile user={user} setUser={setUser} />} />
           <Route path="/" element={<Home />} />
           <Route path="/Changepassword" element={<ChangePassword user={user} />} />
           <Route path="/Show" element={<Show user={user} />} />
