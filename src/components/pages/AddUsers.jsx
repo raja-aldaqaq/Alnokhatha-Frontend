@@ -50,28 +50,33 @@ const AddUsers = () => {
   }
 
   return (
-    <div className="signin col">
-      <div className="card-overlay centered">
+    <div >
+      <div >
         <form
           className="col"
           onSubmit={handleSubmit}
           encType="multipart/form-data"
         >
-          <div className="input-wrapper">
+
+<h1 > Add User</h1>
+
+          <div>
             <label htmlFor="name">Full Name</label>
             <input
+              className="input-wrapper"
               onChange={handleChange}
               name="name"
               type="text"
-              placeholder="ُEnter your Full Name"
+              placeholder="Enter your Full Name"
               value={formValues.name}
               required
             />
           </div>
 
-          <div className="input-wrapper">
+          <div >
             <label htmlFor="name">CPR Number</label>
             <input
+              className="input-wrapper"
               onChange={handleChange}
               name="CPR"
               type="text"
@@ -81,9 +86,10 @@ const AddUsers = () => {
             />
           </div>
 
-          <div className="input-wrapper">
+          <div >
             <label htmlFor="email">Email</label>
             <input
+              className="input-wrapper"
               onChange={handleChange}
               name="email"
               type="email"
@@ -92,9 +98,10 @@ const AddUsers = () => {
               required
             />
           </div>
-          <div className="input-wrapper">
+          <div >
             <label htmlFor="name">Phone Number</label>
             <input
+              className="input-wrapper"
               onChange={handleChange}
               name="phoneNumber"
               type="text"
@@ -105,10 +112,11 @@ const AddUsers = () => {
           </div>
 
           <div>
-            <label htmlFor="file" className="sr-only">
+            <label htmlFor="file" >
               Upload your personal photo
             </label>
             <input
+              className="input-wrapper"
               id="file"
               type="file"
               accept="image/*"
@@ -116,9 +124,10 @@ const AddUsers = () => {
             />
           </div>
 
-          <div className="input-wrapper">
+          <div >
             <label htmlFor="password">Password</label>
             <input
+              className="input-wrapper"
               onChange={handleChange}
               type="password"
               name="password"
@@ -126,9 +135,10 @@ const AddUsers = () => {
               required
             />
           </div>
-          <div className="input-wrapper">
+          <div >
             <label htmlFor="confirmPassword">Confirm Password</label>
             <input
+              className="input-wrapper"
               onChange={handleChange}
               type="password"
               name="confirmPassword"
@@ -137,11 +147,11 @@ const AddUsers = () => {
             />
           </div>
 
-          <select name="type" onChange={handleChange} value={formValues.type}>
+          <select  className="input-wrapper" name="type" onChange={handleChange} value={formValues.type}>
             <option selected disabled>
               Choose Your User Type
             </option>
-            <option id="admin" value="admin">
+            <option id="admin" value="admin" className="input-wrapper">
               Admin
             </option>
             <option id="staff" value="staff">
@@ -158,6 +168,7 @@ const AddUsers = () => {
               (!formValues.password &&
                 formValues.confirmPassword === formValues.password)
             }
+            className='Registerbtn'
           >
             Register
           </button>

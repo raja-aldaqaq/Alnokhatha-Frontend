@@ -15,9 +15,14 @@ const Nav = ({ user, handleLogOut }) => {
     userOptions = (
       <div className="h">
         {user.type === 'client' ? (
+          <>
           <Link to="addBoat" className={'link-user'}>
             Add Boat
           </Link>
+          <Link to="myBoats" className={'link-user '}>
+          My Boats
+        </Link>
+          </>
         ) : null}
 
         {user.type === 'admin' ? (
@@ -93,13 +98,13 @@ const Nav = ({ user, handleLogOut }) => {
   return (
     <header>
       <nav>
-
+{/* 
 
         <div className='h'>
         <NavLink to="/" className={'link-styles'}>
           ALNOKHATHA
         </NavLink>
-        </div>
+        </div> */}
         
         {user ? userOptions : publicOptions}
       </nav>
