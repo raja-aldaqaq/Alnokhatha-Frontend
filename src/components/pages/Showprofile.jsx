@@ -43,20 +43,9 @@ const UpdateProfile = ({ user }) => {
     console.log(e.target.files[0])
   }
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault()
-  //   const formData = new FormData()
-  //   formData.append('name', value.name)
-  //   formData.append('CPR', value.CPR)
-  //   formData.append('email', value.email)
-  //   formData.append('phoneNumber', value.phoneNumber)
-  //   formData.append('pic', value.pic)
-  //   formData.append('password', value.password)
-  // }
-
   return (
-    <div className="signin col">
-      <div className="card-overlay centered">
+    <div className="card-container">
+      <div>
         <form
           className="col"
           onSubmit={handleUpdate}
@@ -64,9 +53,7 @@ const UpdateProfile = ({ user }) => {
         >
           <h1> Update</h1>
 
-          <img src={`http://localhost:3001/${user.pic}`}></img>
-          {/* <img src="/public/upload" value={formValues.pic} */}
-          {/* style=" width: 200px; height: auto ;" for="files"></img> */}
+          <img className="round " src={`http://localhost:3001/${user.pic}`}></img>
 
           <div className="input-wrapper">
             <label htmlFor="name">Full Name</label>
@@ -116,48 +103,7 @@ const UpdateProfile = ({ user }) => {
             />
           </div>
 
-          {/* <div>
-            <label htmlFor="file" className="sr-only">
-              Upload your personal photo
-            </label>
-            <input
-              id="file"
-              type="file"
-              accept="image/*"
-              onChange={handlePicChange}
-            />
-          </div> */}
-          {/* 
-          <div className="input-wrapper">
-            <label htmlFor="password">Password</label>
-            <input
-              onChange={handleChange}
-              type="password"
-              name="password"
-              value={value.password}
-              required
-            />
-          </div>
-          <div className="input-wrapper">
-            <label htmlFor="confirmPassword">Confirm Password</label>
-            <input
-              onChange={handleChange}
-              type="password"
-              name="confirmPassword"
-              value={value.confirmPassword}
-              required
-            />
-          </div> */}
-          <button
-            type="submit"
-            // disabled={
-            //   !formValues.CPR ||
-            //   (!formValues.password &&
-            //     formValues.confirmPassword === formValues.password)
-            // }
-          >
-            update
-          </button>
+          <button className='primary'  type="submit"> update </button>
         </form>
       </div>
     </div>

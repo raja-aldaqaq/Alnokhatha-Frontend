@@ -35,16 +35,16 @@ const Nav = ({ user, handleLogOut }) => {
         <Link to="addHarbor" className={'link-user '}>
           Add Harbor
         </Link>
-        <div className="profile">
-          <img
-            src={`http://localhost:3001/${user.pic}`}
-            className="profilepic"
-          ></img>
-          <h5>Welcome {user.name}!</h5>
-          <Link to="/Show" className={'link-user'}>
-            Show Profile
+        <div className='profile'>
+        <img
+          src={`http://localhost:3001/${user.pic}`}
+          className="profilepic"
+        ></img>
+        <h5>Welcome {user.name}!</h5>
+        <Link to="/Show" className={'link-user'}>
+          Show Profile
           </Link>
-          <div onClick={handleLogOut}>Sign Out</div>
+          <div className='log' onClick={handleLogOut}>Sign Out</div>
         </div>
       </div>
     )
@@ -61,45 +61,13 @@ const Nav = ({ user, handleLogOut }) => {
   return (
     <header>
       <nav>
-        <div className="h">
-          <NavLink to="/" className={'link-styles'}>
-            ALNOKHATHA
-          </NavLink>
-          <div>
-            <NavLink to="/" className={'link-styles'}>
-              ALNOKHATHA
-            </NavLink>
-            <NavLink to="addSlip" className={'link-user '}>
-              Add Slip
-            </NavLink>
-            <NavLink to="slip" className={'link-user '}>
-              All Slips
-            </NavLink>
-            <NavLink to="addBoat" className={'link-user'}>
-              Add Boat
-            </NavLink>
-            <NavLink to="viewBoats" className={'link-user'}>
-              All Boats
-            </NavLink>
-            <NavLink to="Showprofile" className={'link-user '}>
-              Showprofile
-            </NavLink>
-            <NavLink to="/addUsers" className={'link-user '}></NavLink>
-            {/* <NavLink to="Showprofile" className={'link-user '}>
-          Edit Profile
-        </NavLink> */}
-            {/* <NavLink to="Show" className={'link-user '}> Showprofile</NavLink> */}
-            <NavLink to="/addUsers" className={'link-user '}>
-              Add User
-            </NavLink>
-            <NavLink to="harbors" className={'link-user '}>
-              All Harbors
-            </NavLink>
-            <NavLink to="addHarbor" className={'link-user '}>
-              Add Harbor
-            </NavLink>
-          </div>{' '}
+
+        <div className='h'>
+        <NavLink to="/" className={'link-styles'}>
+          ALNOKHATHA
+        </NavLink>
         </div>
+        
         {user ? userOptions : publicOptions}
       </nav>
     </header>
