@@ -23,7 +23,6 @@ import { CheckSession } from '../services/Auth'
 import MyBoats from './components/Boats/MyBoats'
 import ChangePassword from './components/pages/Changepassword'
 import ViewRequests from './components/Requests/ViewRequests'
-
 const App = () => {
   let navigate = useNavigate()
 
@@ -99,8 +98,13 @@ const App = () => {
     <div>
       <header>
         <Nav user={user} handleLogOut={handleLogOut} />
+  
       </header>
       <main>
+      {/* <video controls width="100%" height="50%"  autoPlay loop>
+      <source src='public\ocean-sea-wave-video.mp4' type="video/webm" />
+      Sorry, your browser doesn't support videos.
+    </video> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route

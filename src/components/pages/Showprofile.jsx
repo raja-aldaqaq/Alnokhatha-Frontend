@@ -66,7 +66,7 @@ const UpdateProfile = ({ user, setUser }) => {
     <div className="card-container">
       <div>
         <form
-          className="col"
+     className='zanoob'
           onSubmit={handleUpdate}
           encType="multipart/form-data"
         >
@@ -89,9 +89,10 @@ const UpdateProfile = ({ user, setUser }) => {
             />
           </div>
 
-          <div className="input-wrapper">
+          <div >
             <label htmlFor="name">Full Name</label>
             <input
+             className="input-wrapper"
               onChange={handleChange}
               name="name"
               type="text"
@@ -102,9 +103,10 @@ const UpdateProfile = ({ user, setUser }) => {
             />
           </div>
 
-          <div className="input-wrapper">
+          <div>
             <label htmlFor="name">CPR Number</label>
             <input
+               className="input-wrapper"
               onChange={handleChange}
               name="CPR"
               type="text"
@@ -114,9 +116,10 @@ const UpdateProfile = ({ user, setUser }) => {
             />
           </div>
 
-          <div className="input-wrapper">
+          <div >
             <label htmlFor="email">Email</label>
             <input
+              className="input-wrapper"
               onChange={handleChange}
               name="email"
               type="email"
@@ -125,9 +128,10 @@ const UpdateProfile = ({ user, setUser }) => {
               required
             />
           </div>
-          <div className="input-wrapper">
+          <div >
             <label htmlFor="name">Phone Number</label>
             <input
+              className="input-wrapper"
               onChange={handleChange}
               name="phoneNumber"
               type="text"

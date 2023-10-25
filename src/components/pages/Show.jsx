@@ -52,8 +52,8 @@ const Show = ({ user }) => {
 
   return user ? (
     <div className="card-container">
-      <div>
-        <form className='all'>
+      <div >
+        <form className='zanoob'>
           <h1> Show Profile</h1>
           <img className="round "src={`http://localhost:3001/${user.pic}`} />
 
@@ -68,7 +68,7 @@ const Show = ({ user }) => {
             />
         
 
-          <div className="input-wrapper">
+          <div>
             <label htmlFor="name">CPR Number</label>
             <input className="full"
               onChange={handleChange}
@@ -80,7 +80,7 @@ const Show = ({ user }) => {
             />  
           </div>
 
-          <div className="input-wrapper">
+          <div>
             <label htmlFor="email">Email</label>
             <input className="full"
               onChange={handleChange}
@@ -91,9 +91,10 @@ const Show = ({ user }) => {
               required
             />
           </div>
-          <div className="input-wrapper">
+          <div >
             <label htmlFor="name">Phone Number</label>
-            <input className="full"
+              <input
+                className="full"
               onChange={handleChange}
               name="phoneNumber"
               type="text"

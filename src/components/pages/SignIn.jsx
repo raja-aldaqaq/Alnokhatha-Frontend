@@ -19,12 +19,13 @@ const SignIn = ({ setUser }) => {
   }
 
   return (
-    <div className="signin col">
-      <div className="card-overlay centered">
+    <div >
+      <div >
         <form className="col" onSubmit={handleSubmit}>
-          <div className="input-wrapper">
+          <div>
             <label htmlFor="CPR">CPR</label>
             <input
+              className="input-wrapper"
               onChange={handleChange}
               name="CPR"
               type="CPR"
@@ -33,9 +34,10 @@ const SignIn = ({ setUser }) => {
               required
             />
           </div>
-          <div className="input-wrapper">
+          <div >
             <label htmlFor="password">Password</label>
             <input
+              className="input-wrapper"
               onChange={handleChange}
               type="password"
               name="password"
@@ -46,7 +48,7 @@ const SignIn = ({ setUser }) => {
           <button
             disabled={!formValues.CPR || !formValues.password}
             type="submit"
-          >
+            className='Registerbtn'>
             Log In
           </button>
         </form>

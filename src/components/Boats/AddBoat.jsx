@@ -24,7 +24,7 @@ const AddBoat = ({ getBoats, user }) => {
     await axios.post('http://localhost:3001/boat/addBoat', boatState)
     setBoatState(initialState)
     getBoats()
-    navigate('/viewBoats')
+    navigate('/myBoats')
   }
 
   const handleChange = (event) => {
