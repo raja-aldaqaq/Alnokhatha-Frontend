@@ -20,6 +20,7 @@ import EditSlip from './components/Slips/EditSlip'
 import EditBoat from './components/Boats/EditBoat'
 import Show from './components/pages/Show'
 import { CheckSession } from '../services/Auth'
+import MyBoats from './components/Boats/MyBoats'
 
 const App = () => {
   let navigate = useNavigate()
@@ -70,6 +71,8 @@ const App = () => {
     }
   }
 
+
+
   const getHarbors = async () => {
     try {
       let res = await axios.get('http://localhost:3001/harbor/harbors')
@@ -98,6 +101,7 @@ const App = () => {
             element={<AddBoat getBoats={getBoats} user={user} />}
           />
           <Route path="/viewBoats" element={<ViewBoats boats={boats} />} />
+          <Route path="/myBoats/" element={<MyBoats user={user} />} />
           <Route path="/boat/update/:boat_id" element={<EditBoat />} />
           <Route path="/Showprofile" element={<Showprofile user={user} />} />
           <Route path="/" element={<Home />} />

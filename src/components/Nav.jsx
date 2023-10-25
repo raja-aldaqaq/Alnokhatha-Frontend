@@ -66,8 +66,7 @@ const Nav = ({ user, handleLogOut }) => {
         <NavLink to="/" className={'link-styles'}>
           ALNOKHATHA
         </NavLink>
-          
-          
+
 
         </div>
         {user ? userOptions : publicOptions}
