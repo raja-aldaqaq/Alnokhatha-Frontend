@@ -21,6 +21,7 @@ import EditBoat from './components/Boats/EditBoat'
 import Show from './components/pages/Show'
 import { CheckSession } from '../services/Auth'
 import MyBoats from './components/Boats/MyBoats'
+import ChangePassword from './components/pages/Changepassword'
 import ViewRequests from './components/Requests/ViewRequests'
 
 const App = () => {
@@ -119,9 +120,9 @@ const App = () => {
           />
           <Route path="/myBoats/" element={<MyBoats user={user} />} />
           <Route path="/boat/update/:boat_id" element={<EditBoat />} />
-          <Route path="/Showprofile" element={<Showprofile user={user} />} />
+          <Route path="/Showprofile" element={<Showprofile user={user} setUser={setUser} />} />
           <Route path="/" element={<Home />} />
-          <Route path="/Showprofile" element={<Showprofile user={user} />} />
+          <Route path="/Changepassword" element={<ChangePassword user={user} />} />
           <Route path="/Show" element={<Show user={user} />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/addUsers" element={<AddUsers />} />

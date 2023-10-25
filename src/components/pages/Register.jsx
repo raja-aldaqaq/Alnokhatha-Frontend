@@ -20,6 +20,7 @@ const Register = () => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
+
   const handlePicChange = (e) => {
     setFormValues({
       ...formValues,

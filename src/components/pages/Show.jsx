@@ -105,8 +105,9 @@ const Show = ({ user }) => {
           <div className='buttons'>
           <Link to="/showprofile">
             <button  className='primary' >edit profile</button>
-          </Link>
-            <button  className='primary ghost' type="submit">change password</button>
+            </Link>
+            <Link to="/changepassword" >
+            <button  className='primary ghost' type="submit">change password</button></Link>
           </div>
         </form>
       </div>
