@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { SignInUser } from '../services/Auth'
+import { SignInUser } from '../../../services/Auth'
 import { useNavigate } from 'react-router'
 
 const SignIn = ({ setUser }) => {
@@ -9,8 +9,6 @@ const SignIn = ({ setUser }) => {
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
-
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -45,7 +43,10 @@ const SignIn = ({ setUser }) => {
               required
             />
           </div>
-          <button disabled={!formValues.CPR || !formValues.password} type='submit'>
+          <button
+            disabled={!formValues.CPR || !formValues.password}
+            type="submit"
+          >
             Log In
           </button>
         </form>

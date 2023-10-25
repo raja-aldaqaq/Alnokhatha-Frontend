@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import { RegisterUser } from '../services/Auth'
+import { RegisterUser } from '../../../services/Auth'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const AddUsers = () => {
+const Register = () => {
   let navigat = useNavigate()
   const [formValues, setFormValues] = useState({
     name: '',
     CPR: '',
-    type: '',
+    type: 'client',
     email: '',
     phoneNumber: '',
     pic: null,
@@ -62,7 +62,7 @@ const AddUsers = () => {
               onChange={handleChange}
               name="name"
               type="text"
-              placeholder="ُEnter your Full Name"
+              placeholder="Enter your Full Name"
               value={formValues.name}
               required
             />
@@ -74,7 +74,7 @@ const AddUsers = () => {
               onChange={handleChange}
               name="CPR"
               type="text"
-              placeholder="ُEnter your CPR Number"
+              placeholder="Enter your CPR Number"
               value={formValues.CPR}
               required
             />
@@ -97,7 +97,7 @@ const AddUsers = () => {
               onChange={handleChange}
               name="phoneNumber"
               type="text"
-              placeholder="ُEnter your Phone Number"
+              placeholder="Enter your Phone Number"
               value={formValues.phoneNumber}
               required
             />
@@ -136,14 +136,6 @@ const AddUsers = () => {
             />
           </div>
 
-          <select name="type" onChange={handleChange} value={formValues.type}>
-              <option selected disabled>
-                Choose Your User Type
-              </option>
-              <option id="admin" value='admin'>Admin</option>
-              <option id="staff" value='staff'>Staff</option>
-          </select>
-          
           <input type="hidden" name="type" value={formValues.type} />
 
           <button
@@ -162,4 +154,4 @@ const AddUsers = () => {
   )
 }
 
-export default AddUsers
+export default Register
