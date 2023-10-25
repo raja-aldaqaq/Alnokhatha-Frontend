@@ -32,6 +32,9 @@ const Nav = ({ user, handleLogOut }) => {
         <Link to="/addUsers" className={'link-user '}>
           Add User
         </Link>
+        <Link to="/viewRequests" className={'link-user '}>
+          View Requests
+        </Link>
         <Link to="harbors" className={'link-user '}>
           All Harbors
         </Link>
