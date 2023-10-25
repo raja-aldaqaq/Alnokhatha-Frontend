@@ -22,12 +22,14 @@ import Show from './components/pages/Show'
 import { CheckSession } from '../services/Auth'
 import MyBoats from './components/Boats/MyBoats'
 import ChangePassword from './components/pages/Changepassword'
+import ViewRequests from './components/Requests/ViewRequests'
 
 const App = () => {
   let navigate = useNavigate()
 
   const [slip, setslips] = useState([])
   const [boats, setBoats] = useState([])
+  const [requests, setRequests] = useState([])
   const [harbor, setHarbors] = useState([])
 
   const [user, setUser] = useState(null)
@@ -48,6 +50,8 @@ const App = () => {
     getSlips()
     getBoats()
     getHarbors()
+    getRequests()
+
     if (token) {
       checkToken()
     }
@@ -72,7 +76,15 @@ const App = () => {
     }
   }
 
-
+  const getRequests = async () => {
+    try {
+      let res = await axios.get('http://localhost:3001/request/viewRequests')
+      // console.log(res.data)
+      setRequests(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   const getHarbors = async () => {
     try {
@@ -102,6 +114,10 @@ const App = () => {
             element={<AddBoat getBoats={getBoats} user={user} />}
           />
           <Route path="/viewBoats" element={<ViewBoats boats={boats} />} />
+          <Route
+            path="/viewRequests"
+            element={<ViewRequests requests={requests} />}
+          />
           <Route path="/myBoats/" element={<MyBoats user={user} />} />
           <Route path="/boat/update/:boat_id" element={<EditBoat />} />
           <Route path="/Showprofile" element={<Showprofile user={user} setUser={setUser} />} />

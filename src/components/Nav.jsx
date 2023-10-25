@@ -93,11 +93,14 @@ const Nav = ({ user, handleLogOut }) => {
   return (
     <header>
       <nav>
-        <div className="h">
-          <NavLink to="/" className={'link-styles'}>
-            ALNOKHATHA
-          </NavLink>
+
+
+        <div className='h'>
+        <NavLink to="/" className={'link-styles'}>
+          ALNOKHATHA
+        </NavLink>
         </div>
+        
         {user ? userOptions : publicOptions}
       </nav>
     </header>
