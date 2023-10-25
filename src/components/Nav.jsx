@@ -13,10 +13,10 @@ const Nav = ({ user, handleLogOut }) => {
     console.log(user.pic)
 
     userOptions = (
-
-      <div className='h'>
-
-        <Link to="/addSlip" className={'link-user '}>Add Slip</Link>
+      <div className="h">
+        <Link to="/addSlip" className={'link-user '}>
+          Add Slip
+        </Link>
         <Link to="slip" className={'link-user '}>
           All Slips
         </Link>
@@ -26,6 +26,9 @@ const Nav = ({ user, handleLogOut }) => {
         <Link to="viewBoats" className={'link-user'}>
           All Boats
         </Link>
+        <NavLink to="myBoats" className={'link-user'}>
+          My Boats
+        </NavLink>
         <Link to="/addUsers" className={'link-user '}>
           Add User
         </Link>
@@ -46,7 +49,7 @@ const Nav = ({ user, handleLogOut }) => {
           </Link>
           <div className='log' onClick={handleLogOut}>Sign Out</div>
         </div>
-        </div>
+      </div>
     )
   }
 
@@ -66,9 +69,8 @@ const Nav = ({ user, handleLogOut }) => {
         <NavLink to="/" className={'link-styles'}>
           ALNOKHATHA
         </NavLink>
-
-
         </div>
+        
         {user ? userOptions : publicOptions}
       </nav>
     </header>

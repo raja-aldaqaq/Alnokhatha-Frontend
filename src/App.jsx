@@ -47,6 +47,7 @@ const App = () => {
     getSlips()
     getBoats()
     getHarbors()
+    // myBoats()
     if (token) {
       checkToken()
     }
