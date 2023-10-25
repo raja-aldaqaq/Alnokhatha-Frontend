@@ -38,7 +38,8 @@ const AddUsers = () => {
     formData.append('phoneNumber', formValues.phoneNumber)
     formData.append('pic', formValues.pic)
     formData.append('password', formValues.password)
-    await RegisterUser(formData)
+    const res = await RegisterUser(formData)
+    console.log(res)
     setFormValues({
       name: '',
       email: '',

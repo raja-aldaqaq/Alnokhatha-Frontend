@@ -13,40 +13,72 @@ const Nav = ({ user, handleLogOut }) => {
     console.log(user.pic)
 
     userOptions = (
-
-      <div className='h'>
-
-        <Link to="/addSlip" className={'link-user '}>Add Slip</Link>
-        <Link to="slip" className={'link-user '}>
-          All Slips
-        </Link>
-        <Link to="addBoat" className={'link-user'}>
-          Add Boat
-        </Link>
-        <Link to="viewBoats" className={'link-user'}>
-          All Boats
-        </Link>
-        <Link to="/addUsers" className={'link-user '}>
-          Add User
-        </Link>
-        <Link to="harbors" className={'link-user '}>
-          All Harbors
-        </Link>
-        <Link to="addHarbor" className={'link-user '}>
-          Add Harbor
-        </Link>
-        <div className='profile'>
-        <img
-          src={`http://localhost:3001/${user.pic}`}
-          className="profilepic"
-        ></img>
-        <h5>Welcome {user.name}!</h5>
-        <Link to="/Show" className={'link-user'}>
-          Show Profile
+      <div className="h">
+        {user.type === 'client' ? (
+          <Link to="addBoat" className={'link-user'}>
+            Add Boat
           </Link>
-          <div className='log' onClick={handleLogOut}>Sign Out</div>
+        ) : null}
+
+        {user.type === 'admin' ? (
+          <div>
+            <Link to="/addUsers" className={'link-user '}>
+              Add User
+            </Link>
+            <Link to="viewBoats" className={'link-user'}>
+              All Boats
+            </Link>
+            <Link to="harbors" className={'link-user '}>
+              All Harbors
+            </Link>
+            <Link to="addHarbor" className={'link-user '}>
+              Add Harbor
+            </Link>
+            <Link to="/addSlip" className={'link-user '}>
+              Add Slip
+            </Link>
+            <Link to="slip" className={'link-user '}>
+              All Slips
+            </Link>
+          </div>
+        ) : null}
+
+
+        {user.type === 'staff'
+          ?(
+          <div>
+          <Link to="viewBoats" className={'link-user'}>
+            All Boats
+          </Link>
+          <Link to="harbors" className={'link-user '}>
+            All Harbors
+          </Link>
+          <Link to="/addSlip" className={'link-user '}>
+            Add Slip
+          </Link>
+          <Link to="slip" className={'link-user '}>
+            All Slips
+          </Link>
+        </div>): null}
+          
+          
+          
+
+
+        <div className="profile">
+          <img
+            src={`http://localhost:3001/${user.pic}`}
+            className="profilepic"
+          ></img>
+          <h5>Welcome {user.name}!</h5>
+          <Link to="/Show" className={'link-user'}>
+            Show Profile
+          </Link>
+          <div className="log" onClick={handleLogOut}>
+            Sign Out
+          </div>
         </div>
-        </div>
+      </div>
     )
   }
 
@@ -61,13 +93,10 @@ const Nav = ({ user, handleLogOut }) => {
   return (
     <header>
       <nav>
-
-        <div className='h'>
-        <NavLink to="/" className={'link-styles'}>
-          ALNOKHATHA
-        </NavLink>
-
-
+        <div className="h">
+          <NavLink to="/" className={'link-styles'}>
+            ALNOKHATHA
+          </NavLink>
         </div>
         {user ? userOptions : publicOptions}
       </nav>
