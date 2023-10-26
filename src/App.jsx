@@ -23,6 +23,8 @@ import { CheckSession } from '../services/Auth'
 import MyBoats from './components/Boats/MyBoats'
 import ChangePassword from './components/pages/Changepassword'
 import ViewRequests from './components/Requests/ViewRequests'
+import CreateRequest from './components/Requests/CreateRequest'
+
 const App = () => {
   let navigate = useNavigate()
 
@@ -117,16 +119,34 @@ const App = () => {
             path="/addBoat"
             element={<AddBoat getBoats={getBoats} user={user} />}
           />
-          <Route path="/viewBoats" element={<ViewBoats boats={boats} />} />
+          <Route path="/viewBoats" element={<ViewBoats boats={boats} user={user}/>} />
           <Route
             path="/viewRequests"
             element={<ViewRequests requests={requests} />}
           />
+          <Route
+            path="/createRequest"
+            element={
+              <CreateRequest
+                user={user}
+                harbors={harbor}
+                boats={boats}
+                getRequests={getRequests}
+              />
+            }
+          />
+          {console.log('user', user)}
           <Route path="/myBoats/" element={<MyBoats user={user} />} />
-          <Route path="/boat/update/:boat_id" element={<EditBoat />} />
-          <Route path="/Showprofile" element={<Showprofile user={user} setUser={setUser} />} />
+          <Route path="/boat/update/:boat_id" element={<EditBoat user={user}/>} />
+          <Route
+            path="/Showprofile"
+            element={<Showprofile user={user} setUser={setUser} />}
+          />
           <Route path="/" element={<Home />} />
-          <Route path="/Changepassword" element={<ChangePassword user={user} />} />
+          <Route
+            path="/Changepassword"
+            element={<ChangePassword user={user} />}
+          />
           <Route path="/Show" element={<Show user={user} />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/addUsers" element={<AddUsers />} />

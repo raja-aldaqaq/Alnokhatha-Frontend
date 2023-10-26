@@ -10,7 +10,7 @@ const Home = () => {
     <div className='welcomeN'>
       <h3 className='w'> welcome to</h3>
       
-      <h1  className='wel' >ALNOKHATHA !!!</h1>
+      <h1  className='wel' >ALNOKHATHA !</h1>
 
       <section >
       

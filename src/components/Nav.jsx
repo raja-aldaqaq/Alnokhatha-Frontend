@@ -16,12 +16,15 @@ const Nav = ({ user, handleLogOut }) => {
       <div className="h">
         {user.type === 'client' ? (
           <>
-          <Link to="addBoat" className={'link-user'}>
-            Add Boat
-          </Link>
-          <Link to="myBoats" className={'link-user '}>
-          My Boats
-        </Link>
+            <Link to="addBoat" className={'link-user'}>
+              Add Boat
+            </Link>
+            <Link to="myBoats" className={'link-user'}>
+              My Boats
+            </Link>
+            <Link to="createRequest" className={'link-user'}>
+              Create Request
+            </Link>
           </>
         ) : null}
 
@@ -48,64 +51,57 @@ const Nav = ({ user, handleLogOut }) => {
           </div>
         ) : null}
 
-
-        {user.type === 'staff'
-          ?(
+        {user.type === 'staff' ? (
           <div>
-          <Link to="viewBoats" className={'link-user'}>
-            All Boats
-          </Link>
-          <Link to="harbors" className={'link-user '}>
-            All Harbors
-          </Link>
-          <Link to="/addSlip" className={'link-user '}>
-            Add Slip
-          </Link>
-          <Link to="slip" className={'link-user '}>
-            All Slips
-          </Link>
-        </div>): null}
-          
-          
-          
-
+            <Link to="viewBoats" className={'link-user'}>
+              All Boats
+            </Link>
+            <Link to="harbors" className={'link-user '}>
+              All Harbors
+            </Link>
+            <Link to="/addSlip" className={'link-user '}>
+              Add Slip
+            </Link>
+            <Link to="slip" className={'link-user '}>
+              All Slips
+            </Link>
+          </div>
+        ) : null}
 
         <div className="profile">
           <img
             src={`http://localhost:3001/${user.pic}`}
             className="profilepic"
           ></img>
-          <h5>Welcome {user.name}!</h5>
-          <Link to="/Show" className={'link-user'}>
+          <h5 className='welcome'>Welcome {user.name}!</h5>
+        </div>
+        <Link to="/Show" className={'link-user'}>
             Show Profile
           </Link>
-          <div className="log" onClick={handleLogOut}>
+          <div className={'link-user'} onClick={handleLogOut}>
             Sign Out
           </div>
-        </div>
       </div>
     )
   }
 
   const publicOptions = (
     <div>
-      <Link to="/">Home</Link>
-      <Link to="/register">Register</Link>
-      <Link to="/signin">Sign In</Link>
+      <Link to="/" className={'link-user'}>Home</Link>
+      <Link to="/register" className={'link-user'}>Register</Link>
+      <Link to="/signin" className={'link-user'}>Sign In</Link>
     </div>
   )
 
   return (
     <header>
       <nav>
-{/* 
+        {/* <div className="h"> */}
+          <NavLink to="/" className={'link-styles'}>
+            ALNOKHATHA
+          </NavLink>
+        {/* </div> */}
 
-        <div className='h'>
-        <NavLink to="/" className={'link-styles'}>
-          ALNOKHATHA
-        </NavLink>
-        </div> */}
-        
         {user ? userOptions : publicOptions}
       </nav>
     </header>
