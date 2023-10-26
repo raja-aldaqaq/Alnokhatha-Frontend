@@ -73,14 +73,14 @@ const Nav = ({ user, handleLogOut }) => {
             src={`http://localhost:3001/${user.pic}`}
             className="profilepic"
           ></img>
-          <h5>Welcome {user.name}!</h5>
-          <Link to="/Show" className={'link-user'}>
+          <h5 className='welcome'>Welcome {user.name}!</h5>
+        </div>
+        <Link to="/Show" className={'link-user'}>
             Show Profile
           </Link>
-          <div className="log" onClick={handleLogOut}>
+          <div className={'link-user'} onClick={handleLogOut}>
             Sign Out
           </div>
-        </div>
       </div>
     )
   }

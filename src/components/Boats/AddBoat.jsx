@@ -97,7 +97,7 @@ const AddBoat = ({ getBoats, user }) => {
             </div>
           ) : null}
 
-          <div>
+          {/* <div>
             <label htmlFor="picture">Picture</label>
             <input
               type="text"
@@ -105,7 +105,7 @@ const AddBoat = ({ getBoats, user }) => {
               onChange={handleChange}
               value={boatState.picture}
             />
-          </div>
+          </div> */}
 
             <input type="hidden" name="user" id="user" value={boatState.user} />
           <button type="submit">Add Boat</button>

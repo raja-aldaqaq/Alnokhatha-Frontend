@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
 
-const EditBoat = () => {
+const EditBoat = ({user}) => {
 
   let { boat_id } = useParams()
 
@@ -47,7 +47,11 @@ const EditBoat = () => {
     axios
       .put('http://localhost:3001/boat/update/' + boat_id, values)
       .then((res) => {
-        navigate('/viewBoats')
+        if(user.type==='admin'||user.type ==='staff'){
+          navigate('/viewBoats')
+        }else{
+          navigate('/myBoats')
+        }
       })
       .catch((err) => console.log(err))
   }

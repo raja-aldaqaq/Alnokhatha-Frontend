@@ -1,3 +1,5 @@
+@import url(https://db.onlinewebfonts.com/c/f1cfb0d208038e21ad90267089ab2584?family=Felix+Titling+V2);
+
 body {
   /* background-image: url("/s.jpg"); */
   background-image: url('/public/door-opening-revealing-boat-sea.jpg');
@@ -38,16 +40,17 @@ nav {
   color: aliceblue;
   text-decoration: none; 
   font-size: 30px;
-
+  font-family: "Felix Titling V2";
 }
 
-.link-user {
+.link-user, .welcome {
   font-size: 1.5em;
   color: aliceblue;
   text-decoration: none; 
-  position: relative;
+  /* position: relative; */
   left: 1em;
   padding:0 1em; 
+  font-family: "Felix Titling V2";
 
 }
 
@@ -150,22 +153,28 @@ h3{
 }
 
 .h {
-  margin-top: 50px;
+  /* margin-top: 50px; */
   font-size: 10px;
   display: flex;
   flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
 }
 
 .profile {
-  display: flex-end;
+  margin-top: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .profile {
-  position: fixed;
+  /* position: fixed;
   top: -10px;
- right: 1px;
-  font-size: 3em;
+  right: 1px; */
+  /* font-size: 3em; */
 
 }
+
 .log {
   position: fixed;
   top: 1px;
@@ -275,16 +284,20 @@ label {
 
 .wel{
   text-align: left;
-  font: normal normal normal 100px/117px Dancing Script;
+  /* font: normal normal normal 100px/117px Dancing Script; */
   letter-spacing: 0px;
   color: #1B3351;
-  font-size: 90px;
+  font-size: 80px;
+  font-family: "Felix Titling V2";
+
 }
 
 .w {
   font: normal normal normal 100px/117px Dancing Script;
   padding-top: 50px;
-  font-size: 70px;
+  font-size: 100px;
+  /* color: #1B3351; */
+  
 
 
 }

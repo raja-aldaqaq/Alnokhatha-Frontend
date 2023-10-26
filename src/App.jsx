@@ -119,7 +119,7 @@ const App = () => {
             path="/addBoat"
             element={<AddBoat getBoats={getBoats} user={user} />}
           />
-          <Route path="/viewBoats" element={<ViewBoats boats={boats} />} />
+          <Route path="/viewBoats" element={<ViewBoats boats={boats} user={user}/>} />
           <Route
             path="/viewRequests"
             element={<ViewRequests requests={requests} />}
@@ -137,7 +137,7 @@ const App = () => {
           />
           {console.log('user', user)}
           <Route path="/myBoats/" element={<MyBoats user={user} />} />
-          <Route path="/boat/update/:boat_id" element={<EditBoat />} />
+          <Route path="/boat/update/:boat_id" element={<EditBoat user={user}/>} />
           <Route
             path="/Showprofile"
             element={<Showprofile user={user} setUser={setUser} />}

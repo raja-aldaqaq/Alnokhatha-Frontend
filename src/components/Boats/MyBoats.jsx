@@ -38,7 +38,7 @@ const MyBoats = ({ user }) => {
   return (
     <div className="allboats">
       {boats.map((boat, index) => (
-        <div key={boat._id} className="boat">
+        <div key={boat._id} className="harbor">
           <h3>Name : {boat.name}</h3>
           <Link to={`/boat/update/${boat._id}`}>
             <button>Edit</button>
